@@ -1,0 +1,78 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <!--META DESCRIPTION-->
+  <!--ICONE DE LA PAGE-->
+  <title>Fitness Club</title>
+</head>
+<body>
+
+  <div class="contener_global">
+
+    <!--------------  NAVIGATION  ----------------->
+    <nav>
+
+      <div class="logo">
+        <p>LAZY FITNESS</p>
+      </div>
+      
+      <div class="menu">
+        <a href="">Trouver une salle</a>
+        <a href="">Nos Programmes</a>
+        <a href="">Accompagnements</a>
+        <a href="">Contact</a>
+      </div>
+        
+    </nav>
+    
+    <!--------------  BLOC IMAGE  ----------------->
+    
+    <div class="contenu">
+      
+      <div class="text-img">
+        <p>lazy fitness</p>
+        <p>le sport</p>
+        <p>en douceur</p>
+      </div>
+
+    </div>
+    
+    
+    <!--------------  CONNEXION  ----------------->
+
+    <!--<div class="connexion">
+      <div class="block-connexion">-->
+        <div class="img-container">
+          <img src="../static/icons/zebra.svg" alt="animal">
+        </div>
+        <p>Connexion</p>
+
+  <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+
+    <input type="email" id="email" name="email" placeholder="Email"  > 
+    <input type="password"  id="password" name="password" placeholder="Mot de passe" >
+    <input class="submit" type="submit" value="Se connecter">
+  </form>
+
+ 
+
+
+  <!--------------  FOOTER  ----------------->
+  <footer>
+    <div class="icons_social">
+      <a href=""><img src="../static/icons/footer/facebook.png" alt="facebook"></a>
+      <a href=""><img src="../static/icons/footer/instagram.png" alt="instagram"></a>
+      <a href=""><img src="../static/icons/footer/twitter.png" alt="twitter"></a>
+    </div>
+
+  </footer>
+
+</body>
+</html>

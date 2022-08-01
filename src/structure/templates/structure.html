@@ -1,0 +1,198 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/structure.css' %}">
+
+
+
+<!--------------  Title  ----------------->
+
+
+<div class="name_account">
+  <p>Structure {{ structures.name }}</p>
+</div>
+
+
+
+<!--------------  Accounts  ----------------->
+
+<h3>Compte</h3>
+
+<div class="details">
+
+  <div>
+    <img src="{{ structures.image.url }}" alt="{{ structures.name }}">
+  </div>
+
+  <div>
+    <p>adresse : {{ structures.address }}</p>
+    <p>Franchise : {{ structures.franchise }}</p>
+  </div>
+
+  <div>
+    <p>Gérand de la franchise : {{ structures.franchise.user.first_name }} {{ structures.franchise.user.last_name }}</p>
+    <p>Responsable de la structure: Roberta Miam</p>
+  </div>
+
+</div>
+
+
+
+<!--------------  Description  ----------------->
+<div class="description_account">
+  Description : {{ structures.description }}
+</div>
+
+
+<!--------------  Permission  ----------------->
+<h3>Active</h3>
+
+<p>Abonnement : {{ structures.permissions.name }}</p>
+<div class="containers_permission">
+ 
+  <div class="single_permission">
+    <!-- <img src="../static/icons/permissions/mailling.png" alt="mailling"> -->
+    <img src="../../static/icons/option/mailling.png" alt="mailling">
+    <p>{{ structures.permissions.mailling }}</p>
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="test">
+    {{ structures.permissions.planning }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.planning }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.promotion }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.smoothie }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.distributer }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.spa }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.statistic }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.coaching }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.shower }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.entretien }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.proteine }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.massage }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.evenement }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.concours }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.nettoyage }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+  <div class="single_permission">
+    <img src="../static/icons/permissions/mailling.png" alt="">
+    {{ structures.permissions.assurance }}
+    <div>
+      <input type="checkbox" id="toggle" class="checkbox">
+      <label for="toggle" class="label"></label>
+    </div>
+  </div>
+
+</div>
+<h3>Désactive</h3>
+
+{% endblock %}

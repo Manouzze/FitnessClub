@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/account.css' %}">
+
+
+  <!--------------  Title  ----------------->
+  <div class="title">
+      <h2>Liste des Stuctures</h2>
+  </div>
+
+  <!--------------  Filter  ----------------->
+  <div class="filter-franchise">
+{% for franchise in franchises %}
+    {{ franchise.name }}
+{% endfor %}
+
+  </div>
+  <!--------------  Search  ----------------->
+  <div class="search-bar">
+    <input type="text" placeholder="Recherche partenaires ou salles" class="search">
+    <input type="submit">
+  </div>
+
+
+  
+  
+  <!--------------  Structures  ----------------->
+  
+  <h3>Les Salles</h3>
+
+{% for structure in structures %}
+
+  <div class="container-structures">
+    <div>
+      <img src="{{ structure.image.url }}" alt="{{ structure.name }}">
+    </div>
+    <div>
+      <p>Franchise : {{ structure.franchise }}</p>
+      <p>Structure : {{ structure.name }}</p>
+    </div>
+    <div>
+      <p>Gérant : {{ structure.franchise.user.first_name }} {{ structure.franchise.user.last_name }}</p>
+      <p>Adresse : {{ structure.address }}</p>
+    </div>
+  
+    <div>
+      <p>{{ structure.franchise.user.email }}</p>
+    </div>
+
+    <div>
+      <butto type="button"><a href="{{ structure.get_url }}">Voir plus</a></button>
+    </div>
+  </div>
+
+{% endfor %}
+
+
+
+
+{% endblock %}

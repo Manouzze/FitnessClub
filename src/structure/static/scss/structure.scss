@@ -1,0 +1,78 @@
+
+.name_account{
+  text-align: center;
+  margin-top: 80px;
+  font-size: 16px;
+}
+h3{
+  margin-top: 100px;
+}
+.details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.description_account{
+  margin-top:60px;
+}
+
+.containers_permission{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  
+  .single_permission{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+
+
+
+
+
+.checkbox{
+  display: none;
+}
+.label{
+  display: inline-block;
+
+  width: 40px;
+  height: 23px;
+  background:gray;
+  position: relative;
+
+  transition: all .3s;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+}
+
+
+.label:after{
+  content: "";
+  height: 16px;
+  width: 16px;
+  background: white;
+  position: absolute;
+  top: 2.75px;
+  left: 5px;
+  transition: all .3s;
+  border-radius: 50%;
+}
+
+.checkbox:checked + label:after{
+  transform: translateX(15px);
+}
+
+.checkbox:checked + label{
+  background: #00ACC1;
+}
