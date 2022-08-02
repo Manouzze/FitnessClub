@@ -15,14 +15,14 @@
   <!--------------  Structures  ----------------->
 
   <h3>Les Franchises</h3>
-{% for client in clients %}
+{% for franchise in franchises %}
 
   <div class="container-structures">
     <div>
       <img src="../static/icons/structure/1.png" alt="franchise">
     </div>
     <div>
-      <p>Franchise : {{ client.name }}</p>
+      <p>Franchise : {{ franchise.name }}</p>
       <p>laval-montpellier@FitnessClub.com</p>
     </div>
     <div>
@@ -30,7 +30,7 @@
       <p>je ne sais pas quoi marqué pour le moment</p>
     </div>
     <div>
-      <button type="button">Voir plus</button>
+      <button type="button"><a href="{{ franchise.get_url }}">Voir plus</a></button>
     </div>
   </div>
 

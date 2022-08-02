@@ -1,6 +1,7 @@
 
 from django.db import models
 from account.models import User
+from django.urls import reverse
 
 
 # Create your models here.
@@ -13,4 +14,8 @@ class Franchise(models.Model):
 
     def __str__(self):
         return self.name
+
+
+    def get_url(self):
+        return reverse('franchise', args=[self.slug]) 
 

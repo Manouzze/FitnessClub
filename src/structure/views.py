@@ -5,7 +5,6 @@ from franchise.models import Franchise
 # Create your views here.
 def list_structure(request):
     structures = Structure.objects.filter(is_active=True)
-
     return render(request, 'list_structure.html', context={'structures': structures,})
 
 

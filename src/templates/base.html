@@ -22,12 +22,12 @@
     <!--------------  SIDEBAR  ----------------->
 
     <div class="sidebar">
-      {% if request.user %}
+ 
       <div class="profil">
-        <a href="{% url 'account' %}"><img src="{{ user.avatar.url }}" alt="avatar" class="avatar"></a>
+        <a href="{% url 'account' %}" class="container-avatar"><img src="{{ user.avatar.url }}" alt="avatar"></a>
         <a href="{% url 'account' %}"><p>{{ user.first_name|title }}</p></a>
       </div>
-      {% endif %}
+
 
       <div class="menu">
         {% if request.user.is_staff %}

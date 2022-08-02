@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+
+
+<!--------------  Accounts  ----------------->
+
+<h3>Compte</h3>
+{% for structure in structures %}
+
+<div class="details">
+    <p>Franchise : {{ structures.franchise }}</p>  
+    <p>Franchise : {{ structures.franchise.name }}</p>  
+    
+    <div>
+      <p>Gérand de la franchise : {{ structures.franchise.user.first_name }} {{ structures.franchise.user.last_name }}</p>
+    </div>
+    
+</div>
+{% endfor %}
+
+<!--------------  Franchise  ----------------->
+
+{% for franchise in franchises %}
+
+  <div class="container-structures">
+    <div>
+      <img src="{{ franchise.image.url }}" alt="{{ franchise.name }}">
+    </div>
+    <div>
+     
+      <p>franchise : {{ franchise.name }}</p>
+    </div>
+    <div>
+      <p>Gérant : {{ franchise.user.first_name }} {{ franchise.franchise.user.last_name }}</p>
+      <p>Adresse : {{ franchise.address }}</p>
+    </div>
+  
+    <div>
+      <p>{{ franchise.user.email }}</p>
+    </div>
+
+    <div>
+      <butto type="button"><a href="{{ franchise.get_url }}">Voir plus</a></button>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
