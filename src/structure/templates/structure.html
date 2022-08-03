@@ -3,8 +3,10 @@
 {% load static %}
 
 
+
 {% block content %}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="{% static 'css/structure.css' %}">
 
 
@@ -49,150 +51,151 @@
 
 
 <!--------------  Permission  ----------------->
-<h3>Active</h3>
+<h3>Permissions</h3>
 
 <p>Abonnement : {{ structures.permissions.name }}</p>
+
 <div class="containers_permission">
  
   <div class="single_permission">
-    <!-- <img src="../static/icons/permissions/mailling.png" alt="mailling"> -->
     <img src="../../static/icons/option/mailling.png" alt="mailling">
     <p>{{ structures.permissions.mailling }}</p>
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="mailing" class="checkbox">
+      <label for="mailing" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="test">
+    <img src="../../static/icons/option/planning.png" alt="planning">
     {{ structures.permissions.planning }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="planning" class="checkbox">
+      <label for="planning" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
-    {{ structures.permissions.planning }}
+    <img src="../../static/icons/option/promotion.png" alt="promotion">
+    <p>{{ structures.permissions.promotion }}</p>
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="promotion" class="checkbox">
+      <label for="promotion" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
-    {{ structures.permissions.promotion }}
-    <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
-    </div>
-  </div>
-  <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/glass.png" alt="smoothie">
     {{ structures.permissions.smoothie }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="smoothie" class="checkbox">
+      <label for="smoothie" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/distributeur.png" alt="distributer">
     {{ structures.permissions.distributer }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="distributer" class="checkbox">
+      <label for="distributer" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/spa.png" alt="spa">
     {{ structures.permissions.spa }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="spa" class="checkbox">
+      <label for="spa" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/statistic.png" alt="statistic">
     {{ structures.permissions.statistic }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="statistic" class="checkbox">
+      <label for="statistic" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/coaching.png" alt="coaching">
     {{ structures.permissions.coaching }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="coaching" class="checkbox">
+      <label for="coaching" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/shower.png" alt="shower">
     {{ structures.permissions.shower }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="shower" class="checkbox">
+      <label for="shower" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/entretien.png" alt="entretien">
     {{ structures.permissions.entretien }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="entretien" class="checkbox">
+      <label for="entretien" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/proteine.png" alt="proteine">
     {{ structures.permissions.proteine }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="proteine" class="checkbox">
+      <label for="proteine" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/massage.png" alt="massage">
     {{ structures.permissions.massage }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="massage" class="checkbox">
+      <label for="massage" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/evenement.png" alt="evenement">
     {{ structures.permissions.evenement }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="evenement" class="checkbox">
+      <label for="evenement" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/concours.png" alt="concours">
     {{ structures.permissions.concours }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="concours" class="checkbox">
+      <label for="concours" class="label"></label>
     </div>
   </div>
+
   <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
+    <img src="../../static/icons/option/nettoyage.png" alt="nettoyage">
     {{ structures.permissions.nettoyage }}
     <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
-    </div>
-  </div>
-  <div class="single_permission">
-    <img src="../static/icons/permissions/mailling.png" alt="">
-    {{ structures.permissions.assurance }}
-    <div>
-      <input type="checkbox" id="toggle" class="checkbox">
-      <label for="toggle" class="label"></label>
+      <input type="checkbox" id="nettoyage" class="checkbox">
+      <label for="nettoyage" class="label"></label>
     </div>
   </div>
 
 </div>
-<h3>Désactive</h3>
+
+<button type="submit">Enregistrer</button>
+<button type="submit">Supprimer<img src="../../static/icons/menu/delete.png" alt="supprimer"></button>
+
 
 {% endblock %}

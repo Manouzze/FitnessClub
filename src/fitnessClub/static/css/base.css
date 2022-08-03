@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body {
+  margin: 0px;
+  font-family: "Inter", sans-serif;
+  background-color: #171717;
+  color: white;
+  font-size: 14px;
+}
+
+.name_account, h3 {
+  letter-spacing: 5px;
+}
+
+.container_global {
+  display: flex;
+  min-height: 1200px;
+}
+.container_global .sidebar {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-right: solid 1px black;
+}
+.container_global .sidebar .logo p {
+  font-size: 20px;
+  margin-top: 80px;
+}
+.container_global .sidebar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+.container_global .sidebar .profil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  border: solid 1px black;
+  height: 70px;
+  width: 70px;
+  background: #292929;
+  background-size: 100px 100px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 0.7rem #00ACC1);
+}
+.container_global .sidebar .profil .background-avatar img {
+  max-width: 50px;
+}
+.container_global .sidebar .profil .background-avatar a:last-child p {
+  margin-top: 25px;
+}
+.container_global .sidebar .menu {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.container_global .sidebar .menu a {
+  margin-top: 45px;
+}
+.container_global .sidebar .menu a img {
+  margin: 0 15px;
+}
+.container_global .sidebar .menu .déconnexion {
+  width: 25px;
+}
+.container_global .container_content {
+  padding: 0 100px;
+  width: 80%;
+  background-color: #292929;
+  background-image: url(../images/medal-gold.svg);
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+/*# sourceMappingURL=base.css.map */

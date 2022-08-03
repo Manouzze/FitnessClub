@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,7 +9,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
   <!--META DESCRIPTION-->
   <!--ICONE DE LA PAGE-->
   <title>Compte staff</title>
@@ -22,11 +25,16 @@
     <!--------------  SIDEBAR  ----------------->
 
     <div class="sidebar">
- 
-      <div class="profil">
-        <a href="{% url 'account' %}" class="container-avatar"><img src="{{ user.avatar.url }}" alt="avatar"></a>
-        <a href="{% url 'account' %}"><p>{{ user.first_name|title }}</p></a>
+      
+      <div class="logo">
+        <p>Fitness Club</p>
       </div>
+      <div class="profil">
+        <div class="background-avatar">
+          <a href="{% url 'account' %}"><img src="{{ user.avatar.url }}" alt="avatar"></a>
+        </div>
+      </div>
+      <a href="{% url 'account' %}"><p>{{ user.first_name|title }} {{ user.last_name|title }}</p></a>
 
 
       <div class="menu">
@@ -37,6 +45,7 @@
         <a href="{% url 'list_structure' %}"><img src="{% static 'icons/menu/list_structure.png' %}" alt="list structure">Liste des Structure</a>
         {% endif %}
         <a href="{% url 'account' %}"><img src="{% static 'icons/menu/account.png' %}" alt="account">Mon compte</a>
+        <a href="{% url 'logout' %}"><img src="{% static 'icons/menu/croix.png' %}" alt="Déconnexion" class="déconnexion">Déconnexion</a>
       </div>
       
     </div>
@@ -44,8 +53,7 @@
     <!--------------  CONTENTE : ACCOUNT, DESCRIPTION, STRUCTURES ----------------->
 
     <div class="container_content">
-
-      <a href="{% url 'logout' %}"><img src="{% static 'icons/menu/croix.png' %}" alt="Déconnexion" class="déconnexion"></a>
+   
 
       {% block content %}
       {% endblock %}

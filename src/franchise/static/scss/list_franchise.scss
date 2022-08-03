@@ -1,0 +1,19 @@
+@import '../../../fitnessClub/static/scss/mixin.scss';
+
+
+
+.name_account{
+  border: 1px;
+
+}
+
+
+
+
+.container-franchise{
+  @include list-container; 
+  letter-spacing: 0px;
+}
+button{
+  @include button;
+}

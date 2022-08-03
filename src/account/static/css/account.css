@@ -1,3 +1,15 @@
+button {
+  width: 134px;
+  height: 48px;
+  background: #171717;
+  border: none;
+  border-radius: 9px;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+
 h3, .name_account p:first-child {
   font-weight: 500;
 }
@@ -8,7 +20,7 @@ h3, .name_account p:first-child {
 
 .name_account {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 h3 {
@@ -17,10 +29,15 @@ h3 {
 
 .details_account {
   display: flex;
+  justify-content: flex-start;
+}
+.details_account .details {
+  width: 50%;
 }
 
 .description_account {
   margin-top: 60px;
+  line-height: 170%;
 }
 
 .container-structures {
@@ -31,17 +48,6 @@ h3 {
   border-radius: 17px;
   min-height: 140px;
   margin-bottom: 30px;
-}
-.container-structures button {
-  width: 134px;
-  height: 48px;
-  background: #171717;
-  border: none;
-  border-radius: 9px;
-}
-.container-structures button a {
-  color: white;
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=account.css.map */

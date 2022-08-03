@@ -2,25 +2,27 @@
 
 {% load static %}
 
+
 {% block content %}
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/account.css' %}">
+ 
+  <link rel="stylesheet" href="{% static 'css/list_franchise.css' %}">
 
 
 
   <div class="name_account">
 
+  </div>
+
 
   <!--------------  Structures  ----------------->
 
-  <h3>Les Franchises</h3>
+  <h4>Les Franchises</h4>
+  
 {% for franchise in franchises %}
 
-  <div class="container-structures">
-    <div>
-      <img src="../static/icons/structure/1.png" alt="franchise">
-    </div>
+  <div class="container-franchise">
     <div>
       <p>Franchise : {{ franchise.name }}</p>
       <p>laval-montpellier@FitnessClub.com</p>

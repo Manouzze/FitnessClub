@@ -16,7 +16,6 @@ Including another URLconf
 import imp
 from django.contrib import admin
 from django.urls import include, path
-from account.views import loginUser, account, add_franchise, logoutUser, base
 from structure.views import list_structure, structure
 from fitnessClub import settings
 from django.conf.urls.static import static
@@ -25,15 +24,11 @@ from franchise.views import list_franchise, franchise
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('base/', base),
-    path('login/', loginUser, name='login'),
-    path('logout/', logoutUser, name='logout'),
-    path('account/', account, name='account'),
-    path('add_franchise/', add_franchise, name='add_franchise'),
+    path('account/', include("account.urls")),
     path('list_structure/', list_structure, name='list_structure'),
     path('list_franchise/', list_franchise, name='list_franchise'),
     path('structure/<str:slug>/', structure, name='structure'),
-    path('franchise/<slug:slug>/', franchise, name='franchise'),
+    path('franchise/<str:slug>/', franchise, name='franchise'),
 
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

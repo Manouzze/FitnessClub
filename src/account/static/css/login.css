@@ -74,12 +74,6 @@ body {
   height: 38px;
   border: none;
 }
-.contener_global .connexion .block-connexion form input::-moz-placeholder {
-  text-align: center;
-}
-.contener_global .connexion .block-connexion form input:-ms-input-placeholder {
-  text-align: center;
-}
 .contener_global .connexion .block-connexion form input::placeholder {
   text-align: center;
 }
@@ -116,4 +110,6 @@ footer .icons_social {
 }
 footer .icons_social a {
   margin: 10px;
-}/*# sourceMappingURL=login.css.map */
+}
+
+/*# sourceMappingURL=login.css.map */

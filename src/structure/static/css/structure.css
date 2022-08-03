@@ -36,6 +36,12 @@ h3 {
 .checkbox {
   display: none;
 }
+.checkbox:checked + label:after {
+  transform: translateX(15px);
+}
+.checkbox:checked + label {
+  background: #00ACC1;
+}
 
 .label {
   display: inline-block;
@@ -47,12 +53,11 @@ h3 {
   border-radius: 20px;
   cursor: pointer;
 }
-
 .label:after {
   content: "";
   height: 16px;
   width: 16px;
-  background: white;
+  background: rgb(255, 255, 255);
   position: absolute;
   top: 2.75px;
   left: 5px;
@@ -60,12 +65,16 @@ h3 {
   border-radius: 50%;
 }
 
-.checkbox:checked + label:after {
-  transform: translateX(15px);
+button {
+  width: 134px;
+  height: 48px;
+  background: #171717;
+  border: none;
+  border-radius: 9px;
 }
-
-.checkbox:checked + label {
-  background: #00ACC1;
+button a {
+  color: white;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=structure.css.map */
