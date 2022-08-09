@@ -1,0 +1,103 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+
+
+    <!--------------  Search  ----------------->
+  
+  <form method="GET" action="{% url 'search' %}">
+    <div class="search-bar">
+      <input type="text" placeholder="Recherche partenaires ou salles" class="search" name="search">
+      <button type="submit"><img src="{% static 'icons/menu/search.png' %}"></img></button>
+    </div>
+  </form>
+  
+                   <!--------------  GLOBAL  ----------------->
+  <div class="container-global">
+    
+    
+    <!--------------  Block Lelf  ----------------->
+
+
+    <!-----------  Counter  -------------->
+
+    <div class="container-left">
+      
+      <div class="block-container-structures">
+
+        <div class="container-structures" id="salle">
+          <p>{{ structures }}</p>
+          <p>Salles</p>
+        </div>
+        <div class="container-structures" id="franchise">
+          <p>{{ franchises }}</p>
+          <p>Franchises</p>
+        </div>
+        <div class="container-structures" id="manager">
+          <p>{{ users }}</p>
+          <p>Partenaires</p>
+        </div>
+      </div>
+      <!-----------  Add all  -------------->
+
+      <div id="add_franchise" class="container-structures">
+        <p>Ajouter une nouvelle Franchise</p>
+        <div>
+          <button type="button"><a href="{% url 'add_Franchise' %}">Voir plus</a></button>
+        </div>
+      </div>
+
+      <div id="add_structure" class="container-structures">
+        <p>Ajouter une nouvelle Structure</p>
+        <a href="{% url 'add_Structure' %}"><img src="{% static 'icons/structure/1.png' %}" alt="ajouter une salle"></a>
+        <div>
+          <button type="button"><a href="{% url 'add_Structure' %}">Voir plus</a></button>
+        </div>
+      </div>
+
+      <div id="add_user" class="container-structures">
+        <p>Ajouter un nouveau User</p>
+        <div>
+          <button type="button"><a href="{% url 'add_User' %}">Voir plus</a></button>
+        </div>
+      </div>
+  </div>
+  
+  
+  <!--------------  Block Right  ----------------->
+  <div class="container-right">
+    <div class="container-structures" id="manager">
+      <p>40</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+      <p>Partenaires</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

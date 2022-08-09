@@ -1,0 +1,32 @@
+@import '../../../fitnessClub/static/scss/mixin.scss';
+
+.name_account{
+  margin-top: 100px;
+  text-align: center;
+  font-style: bold;
+}
+h3{
+  text-align: center;
+  margin: 50px;
+}
+
+.details_account{
+  display: flex;
+  justify-content: flex-start;
+  .details{
+    width: 50%;
+  }
+}
+.description_account{
+  margin:60px 0px;
+  line-height: 170%;
+  
+}
+
+.container-structures{
+  @include list-container;
+}
+
+button{
+  @include button;
+}

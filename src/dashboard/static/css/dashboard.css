@@ -6,6 +6,7 @@
   border-radius: 17px;
   min-height: 140px;
   margin-bottom: 30px;
+  letter-spacing: 5px;
 }
 
 button {
@@ -20,23 +21,17 @@ button a {
   text-decoration: none;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.title {
+.container-global {
   display: flex;
-  justify-content: center;
 }
 
-.filter-franchise {
-  display: flex;
-  justify-content: space-evenly;
+.container-left {
+  width: 80%;
 }
 
-h3 {
-  margin: 100px 0px;
+.container-right {
+  width: 20%;
+  height: 100%;
 }
 
 .search-bar {
@@ -68,17 +63,28 @@ h3 {
   width: 25px;
 }
 
-.add-structure {
-  margin-bottom: 20px;
+.block-container-structures {
   display: flex;
-  justify-content: end;
-}
-.add-structure a {
-  display: flex;
-  align-items: center;
-}
-.add-structure a img {
-  margin-right: 8px;
+  justify-content: space-evenly;
 }
 
-/*# sourceMappingURL=list_structure.css.map */
+#salle, #franchise, #manager {
+  min-width: 300px;
+  min-height: 215px;
+  flex-direction: column;
+  letter-spacing: 5px;
+}
+#salle p:first-child, #franchise p:first-child, #manager p:first-child {
+  font-size: 40px;
+  margin-bottom: 0px;
+}
+#salle p:last-child, #franchise p:last-child, #manager p:last-child {
+  font-size: 20px;
+}
+
+#add_franchise, #add_structure {
+  flex-direction: column;
+  max-width: 500px;
+}
+
+/*# sourceMappingURL=dashboard.css.map */

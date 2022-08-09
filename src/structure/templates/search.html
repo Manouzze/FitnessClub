@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+
+<div class="title">
+  <h3>Résultats de {{ results_structure }}</h3>
+</div>
+  {% if results_structure %}
+    {% for result in results_structure %}
+
+
+      <div class="container-structures">
+        <div>
+          <a href="{{ result.get_url }}"><img src="{{ result.image.url }}" alt="{{ result.name }}"></a>
+        </div>
+        <div>
+          <p>Nom : {{ result }}</p>
+          <p>Adresse : {{ result.address }}</p>
+        </div>
+      
+        <div>
+          <button type="button"><a href="{{ result.get_url }}">Voir plus</a></button>
+        </div>
+      </div>
+
+
+    {% endfor %}
+    
+  {% elif results_franchise %}
+    <div class="title">
+      <h3>Résultats de {{ results_franchise }}</h3>
+    </div>
+      {% if results_franchise %}
+        {% for result in results_franchise %}
+    
+    
+          <div class="container-structures">
+            <div>
+              <a href="{{ result.get_url }}"><img src="{{ result.image.url }}" alt="{{ result.name }}"></a>
+            </div>
+            <div>
+              <p>Nom : {{ result }}</p>
+              <p>Adresse : {{ result.address }}</p>
+            </div>
+          
+            <div>
+              <button type="button"><a href="{{ result.get_url }}">Voir plus</a></button>
+            </div>
+          </div>
+    
+    
+        {% endfor %}
+
+        {% endif %}
+  {% else %}
+      <p>Aucun résultat trouvée</p>
+  {% endif %}
+
+{% endblock %}

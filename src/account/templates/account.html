@@ -4,101 +4,109 @@
 
 {% block content %}
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
 
 
 
-  <div class="name_account">
+    <div class="name_account">
 
-    {% if request.user.is_staff %}
-      <p>Équipe de Fitness Club</p>
+      {% if user.is_staff %}
+        <p>Équipe de Fitness Club</p>
 
-    {% else %}
-      <p>Partenaire de Fitness Club</p>
-    {% endif %}
+      {% else %}
+        <p>Partenaire de Fitness Club</p>
+      {% endif %}
 
-    <p>{{ user.first_name|title }} {{user.last_name|title}}</p>
-  </div>
-  <!--------------  Accounts  ----------------->
-  <h3>Compte</h3>
-
-  <div class="details_account">
-    <div class="details">
-      <p>id : {{ user.number }}</p>
-      <p>email : {{ user.email|title }}</p>
+      <p>{{ user.first_name|title }} {{user.last_name|title}}</p>
     </div>
-    <div>
-      <p>reponsable : Robert Tevo</p>
-      <p>technical contact: Roberta Miam</p>
+    <!--------------  Accounts  ----------------->
+    <h3>Compte</h3>
+
+    <div class="details_account">
+      <div class="details">
+        <p>id : {{ user.number }}</p>
+        <p>email : {{ user.email|title }}</p>
+      </div>
+      <div>
+        <p>reponsable : Robert Tevo</p>
+        <p>technical contact: Roberta Miam</p>
+      </div>
+    
     </div>
-   
-  </div>
-  <!--------------  Description  ----------------->
-  <div class="description_account">
-    Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenean iaculis faucibus justo sit amet lacinia. Donec lobortis mattis neque nec sagittis.
-    Proin est lacus, posuere eget accumsan sed, molestie a nisi.
-    Mauris eget lacinia urna, eget finibus sapien.
-    Sed interdum lacus non tellus ornare, vel sagittis eros consectetur.
-    Donec lobortis mattis neque nec sagittis.
-    Proin est lacus, posuere eget accumsan sed, molestie a nisi.
-    Mauris eget lacinia urna, eget finibus sapien.
-    Sed interdum lacus non tellus ornare, vel sagittis eros consectetur.
-  </div>
+    <!--------------  Description  ----------------->
+    <div class="description_account">
+      Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenean iaculis faucibus justo sit amet lacinia. Donec lobortis mattis neque nec sagittis.
+      Proin est lacus, posuere eget accumsan sed, molestie a nisi.
+      Mauris eget lacinia urna, eget finibus sapien.
+      Sed interdum lacus non tellus ornare, vel sagittis eros consectetur.
+      Donec lobortis mattis neque nec sagittis.
+      Proin est lacus, posuere eget accumsan sed, molestie a nisi.
+      Mauris eget lacinia urna, eget finibus sapien.
+      Sed interdum lacus non tellus ornare, vel sagittis eros consectetur.
+    </div>
 
 
-  <!--------------  Structures  ----------------->
-  <h3>Les Salles </h3>
+    <!--------------  Structures  ----------------->
+  {% if not user.is_staff %}  
+    
 
-  {% if request.user.is_staff %}  
-  {% for structure in structures %}
+    <h3>Les Franchise </h3>
+    
+    {% for franchise in franchises %}
+
+    <!--------------  Structures  ----------------->
+
+    <div class="container-structures">
+      <div>
+        <img src="{{ franchise.avatar.url }}" alt="franchise">
+      </div>
+      <div>
+        
+        <p>Franchise : {{ franchise.name }}</p>
+        <p>Structure : {{ franchise.user.first_name|title }}</p>
+      </div>
+      
+      <div>
+        <button type="button"><a href="{{ franchise.get_url }}">Voir plus</a></button>
+      </div>
+    </div>
+
   
+    
+    
+    {% if structures.request. %}
 
-  <div class="container-structures">
-    <div>
-      <img src="../static/icons/structure/1.png" alt="franchise">
+    <!--------------  Structures  ----------------->
+    
+    <div class="container-structures">
+      <div>
+        <img src="{{ structure.avatar.url }}" alt="structure">
+      </div>
+      <div>
+        
+        <p>Structure : {{ structure.name }}</p>
+        <p>User : {{ structure.franchise.user.first_name|title }}</p>
+      </div>
+      
+      <div>
+        <button type="button"><a href="{{ structure.get_url }}">Voir plus</a></button>
+      </div>
     </div>
-    <div>
-      <p>Franchise {{ structure.franchise.name }}</p>
-      <p>Structure : {{ structure.name }}</p>
-    </div>
-    <div>
-      <p>Adresse : {{ structure.address }}</p>
-      <p>Contact : {{ structure.franchise.user.email }}</p>
-    </div>
-    <div>
-      <p>Responsable de la salle : {{ structure.franchise.user.first_name }} {{ structure.franchise.user.last_name }}</p>
-      <p>Email responsable : {{ structure.franchise.user.email }}</p>
-    </div>
-    <div>
-      <button type="button"><a href="">Voir plus</a></button>
-    </div>
-  </div>
- 
+    
+    
+    
+    {% endif %}
+      
+    {% endfor %}
+    
+    <!--------------  Structures  ----------------->
 
-  {% endfor %}
-{% else %}
-  {% for franchise in franchises %}
-  <div class="container-structures">
-    <div>
-      <img src="../static/icons/structure/1.png" alt="franchise">
-    </div>
-    <div>
-      <p>Franchise : {{ structure.franchise.name }}</p>
-      <p>Nom : {{ franchise.user.first_name }}</p>
-    </div>
-    <div>
-      <p>Adresse : {{ franchise.user.}}</p>
-      <p>je ne sais pas quoi marqué pour le moment</p>
-    </div>
-    <div>
-      <button type="button">Voir plus</button>
-    </div>
-  </div>
-  {% endfor %}
-{% endif %}
+    
+
+  {% endif %}
 
 
 

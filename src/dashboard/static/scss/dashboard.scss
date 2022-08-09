@@ -1,30 +1,26 @@
 
+
 @import '../../../fitnessClub/static/scss/mixin.scss';
 
 
 .container-structures{
   @include list-container;
+  letter-spacing: 5px;
 }
 
 button{
   @include button;
 }
 
-a{
-  text-decoration: none;
-  color: white;
-}
-.title{
+.container-global{
   display: flex;
-  justify-content: center;
 }
-.filter-franchise{
-  display: flex;
-  justify-content: space-evenly;
+.container-left{
+  width: 80%;
 }
-
-h3{
-  margin: 100px 0px;
+.container-right{
+  width: 20%;
+  height: 100%;
 }
 
 .search-bar{
@@ -56,15 +52,26 @@ h3{
   }
 }
 
-.add-structure{
-  margin-bottom: 20px;
+.block-container-structures{
   display: flex;
-  justify-content: end;
-  a{
-    display: flex;
-    align-items: center;
-    img{
-      margin-right: 8px ;
-    }
+  justify-content: space-evenly;
+}
+
+#salle, #franchise, #manager{
+  min-width: 300px;
+  min-height: 215px;
+  flex-direction: column;
+  letter-spacing: 5px;
+  p:first-child{
+    font-size: 40px;
+    margin-bottom: 0px;
   }
+  p:last-child{
+    font-size: 20px;
+  }
+}
+
+#add_franchise, #add_structure{
+  flex-direction: column;
+  max-width: 500px;
 }

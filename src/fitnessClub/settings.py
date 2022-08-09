@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'account',
     'franchise',
     'structure',
+    'dashboard',
 ]
 
 MIDDLEWARE = [

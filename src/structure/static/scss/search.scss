@@ -1,0 +1,23 @@
+
+@import '../../../fitnessClub/static/scss/mixin.scss';
+
+
+.container-structures{
+  @include list-container;
+}
+
+button{
+  @include button;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  h3{
+    margin: 100px 0px;
+  }
+}

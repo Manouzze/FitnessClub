@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/add_structure.css' %}">
+
+
+<!--------------  Title  ----------------->
+    <div class="name_account">
+      <h3>Ajouter une Salle</h3>
+    </div>
+      
+<!--------------  Message  ----------------->
+{% include 'alerts.html' %}
+
+<!--------------  Formulaire user  ----------------->
+<div class="formulaire">
+  <form method="POST" action="{% url 'add_Structure' %}">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" >Créer</button>
+  </form>
+</div>
+
+
+{% endblock %}

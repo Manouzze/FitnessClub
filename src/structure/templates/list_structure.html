@@ -13,35 +13,40 @@
 
   <!--------------  Title  ----------------->
   <div class="title">
-      <h2>Liste des Stuctures</h2>
+      <h3>Liste des Stuctures</h3>
   </div>
 
 
   <!--------------  Filter  ----------------->
   <div class="filter-franchise">
 {% for franchise in franchises %}
-    {{ franchise.name }}
+    <a href="{{ franchise.get_absolute_url }}">{{ franchise.name }}</a>
 {% endfor %}
-
   </div>
-  <!--------------  Search  ----------------->
-  <div class="search-bar">
-    <input type="text" placeholder="Recherche partenaires ou salles" class="search">
-    <button type="button"><img src="{% static 'icons/menu/search.png' %}"></img></button>
-  </div>
-
-
   
+  <!--------------  Search  ----------------->
+
+  <form method="GET" action="{% url 'search' %}">
+    <div class="search-bar">
+      <input type="text" placeholder="Recherche salles" class="search" name="search">
+      <button type="submit"><img src="{% static 'icons/menu/search.png' %}"></img></button>
+    </div>
+  </form>
+  
+  
+  <!--------------  Add structure  ----------------->
+  <div class="add-structure">
+    <a href=""><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une salle</a>
+  </div>
   
   <!--------------  Structures  ----------------->
   
-  <h3>Les Salles</h3>
 
 {% for structure in structures %}
 
   <div class="container-structures">
     <div>
-      <img src="{{ structure.image.url }}" alt="{{ structure.name }}">
+      <a href="{{ structure.get_absolute_url }}"><img src="{{ structure.image.url }}" alt="{{ structure.name }}"></a>
     </div>
     <div>
       <p>Franchise : {{ structure.franchise }}</p>
@@ -57,7 +62,7 @@
     </div>
 
     <div>
-      <button type="button"><a href="{{ structure.get_url }}">Voir plus</a></button>
+      <button type="button"><a href="{{ structure.get_absolute_url }}">Voir plus</a></button>
     </div>
   </div>
 

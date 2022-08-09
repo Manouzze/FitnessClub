@@ -1,5 +1,6 @@
 from django.urls import reverse
 from django.db import models
+from account.models import User
 
 from franchise.models import Franchise
 
@@ -39,8 +40,8 @@ class Structure(models.Model):
     def __str__(self):
         return str(self.name)
 
-    def get_url(self):
-        return reverse('structure', args=[self.slug]) 
+    def get_absolute_url(self):
+        return reverse('structure_detail', args=[self.slug]) 
 
 
 class StructurePerm(models.Model):

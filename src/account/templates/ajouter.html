@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/add_franchise.css' %}">
+
+
+<!--------------  Title  ----------------->
+    <div class="name_account">
+      <h3>Ajouter un User</h3>
+    </div>
+      
+<!--------------  Message  ----------------->
+{% include 'alerts.html' %}
+
+<!--------------  Formulaire user  ----------------->
+<div class="formulaire">
+  <form method="POST" action="{% url 'add_User' %}">
+        {% csrf_token %}
+        {{ formsignup }}
+        <button type="submit" >S’inscrire</button>
+  </form>
+</div>
+
+
+{% endblock %}

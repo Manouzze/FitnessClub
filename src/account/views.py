@@ -1,4 +1,5 @@
 import email
+from django.http import HttpRequest
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from account.models import User
@@ -6,25 +7,25 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.conf import settings
 from franchise.models import Franchise
+from franchise.views import franchise
 from structure.models import Structure
 from . import forms
 
 
 
+
 #--------------* Views allowed for staff *--------------#
 
-#--------------* ADD FRANCHISE *--------------#
+#--------------* ADD USER *--------------#
 
-def add_franchise(request):
+def add_User(request):
     formsignup = forms.SignupForm()
     if request.method == 'POST':
         formsignup = forms.SignupForm(request.POST)
         if formsignup.is_valid():
             user = formsignup.save()
-            # auto-login user
-            login(request, user)
-            return redirect(settings.LOGIN_REDIRECT_URL)
-    return render(request, 'add_franchise.html', context={'formsignup': formsignup})
+            messages.success(request, "Un nouveau profile vient d'être créé.")
+    return render(request, 'ajouter.html', context={'formsignup': formsignup})
 
 
 
@@ -50,19 +51,17 @@ def loginUser(request):
 
 #--------------* LOGOUT *--------------#
 
-
 def logoutUser(request):
     auth.logout(request)
     messages.success(request, 'Vous êtes déconnecté')
     return redirect('login')
 
 
-
 #--------------* ACCOUNT *--------------#
 
 def account(request):
-    structures = Structure.objects.filter(is_active=True)
-    return render(request, 'account.html', context={'structures': structures,})
-
-
+    current_user = request.user
+    franchises = Franchise.objects.filter(user=current_user)
+    structures = Structure.objects.all()
+    return render(request, 'account.html', context={'franchises': franchises, 'structures': structures, })
 

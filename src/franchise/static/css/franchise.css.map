@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"franchise.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/franchise.scss","../../../fitnessClub/static/scss/mixin.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;;;AAEF;EACE;EACA;;;AAGF;EACE;EACA;;AACA;EACE;;;AAGJ;EACE;EACA;;;AAIF;ECNE;EACA;EACA;EACA;EACA;EACA;EACA;;;ADIF;ECtBI;EACA;EACA;EACA;EACA;;AACA;EACE;EACA","file":"franchise.css"}

@@ -31,7 +31,7 @@
       </div>
       <div class="profil">
         <div class="background-avatar">
-          <a href="{% url 'account' %}"><img src="{{ user.avatar.url }}" alt="avatar"></a>
+          <a href="{% url 'account' %}"><img src="{{ user.avatar }}" alt="avatar"></a>
         </div>
       </div>
       <a href="{% url 'account' %}"><p>{{ user.first_name|title }} {{ user.last_name|title }}</p></a>
@@ -39,8 +39,7 @@
 
       <div class="menu">
         {% if request.user.is_staff %}
-        <a href="{% url 'add_franchise' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="add franchise">Ajouter un partenaire</a>
-        <!-- <a href="{% url 'add_franchise' %}"><img src="../static/icons/menu/add_franchise.png" alt="add franchise">Ajouter un partenaire</a> -->
+        <a href="{% url 'dashboard' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="dashboard">Dashboard</a>
         <a href="{% url 'list_franchise' %}"><img src="{% static 'icons/menu/list_franchise.png' %}" alt="list franchise">Liste des partenaires</a>
         <a href="{% url 'list_structure' %}"><img src="{% static 'icons/menu/list_structure.png' %}" alt="list structure">Liste des Structure</a>
         {% endif %}

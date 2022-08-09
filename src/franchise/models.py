@@ -11,11 +11,12 @@ class Franchise(models.Model):
     description = models.TextField(max_length=500)
     is_active = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete = models.SET_NULL, null = True)
+    
+    def get_absolute_url(self):
+        return reverse('franchise', args=[self.slug]) 
 
     def __str__(self):
         return self.name
 
 
-    def get_url(self):
-        return reverse('franchise', args=[self.slug]) 
 

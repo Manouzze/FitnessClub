@@ -10,36 +10,60 @@
 <link rel="stylesheet" href="{% static 'css/franchise.css' %}">
 
 
-<!--------------  Accounts  ----------------->
+<!--------------  Accounts Franchise  ----------------->
 
-<h3>Compte</h3>
+<div class="name_account">
+  <p>Partenaire de FitnessClub</p>
+  <p>{{ franchises.user.first_name }} {{ franchises.user.last_name }}</p>
+</div>
 
+<!--------------  Descritpion  ----------------->
 
-<!--------------  Franchise  ----------------->
+<h3>Franchise {{ franchises.name }}</h3>
 
+<div class="details_account">
+  <div class="details">
+    <p>Id : {{ franchises.user.number }}</p>
+    <p>Email : {{ franchises.user.email|title }}</p>
+  </div>
+  <div>
+    <p>reponsable : Robert Tevo</p>
+    <p>technical contact: Roberta Miam</p>
+  </div>
+ 
+</div>
+<!--------------  Description  ----------------->
+<div class="description_account">
+  {{ franchises.description }}
+</div>
+<p>lozfzel</p>
 
-
+<!--------------  Structure  ----------------->
+{% if request.user %}
+  {% for structure in structures %}
 
   <div class="container-structures">
     <div>
       <img src="{{ structure.image.url }}" alt="{{ structure.name }}">
     </div>
     <div>
-     
+      
       <p>Structure : {{ structure.name }}</p>
     </div>
     <div>
       <p>Adresse : {{ structure.address }}</p>
     </div>
-  
+    
     <div>
-      <p>{{ structure.user.email }}</p>
+      <p>{{ structure.franchise.user.email }}</p>
     </div>
-
+    
     <div>
-      <butto type="button"><a href="{{ structure.get_url }}">Voir plus</a></button>
+      <button type="button"><a href="{{ structure.get_absolute_url }}">Voir plus</a></button>
+      </div>
     </div>
-  </div>
-
+    
+    {% endfor %}
+{% endif %}
 
 {% endblock %}
