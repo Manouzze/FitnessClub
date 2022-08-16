@@ -1,8 +1,10 @@
 from django.contrib import admin
-from structure.models import Structure, Permission, StructurePerm
+from structure.models import Structure, Permission
 
 
-admin.site.register(Structure)
+class StrucureAdmin(admin.ModelAdmin):
+  prepopulated_fields = {'slug': ('name',), }
 
+
+admin.site.register(Structure, StrucureAdmin)
 admin.site.register(Permission)
-admin.site.register(StructurePerm)

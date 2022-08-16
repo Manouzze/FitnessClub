@@ -13,7 +13,7 @@
 
   <!--------------  Title  ----------------->
   <div class="title">
-      <h3>Liste des Stuctures</h3>
+      <h3>Liste des Structures</h3>
   </div>
 
 
@@ -36,7 +36,7 @@
   
   <!--------------  Add structure  ----------------->
   <div class="add-structure">
-    <a href=""><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une salle</a>
+    <a href="{% url 'create_structure' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une salle</a>
   </div>
   
   <!--------------  Structures  ----------------->
@@ -53,12 +53,21 @@
       <p>Structure : {{ structure.name }}</p>
     </div>
     <div>
-      <p>Gérant : {{ structure.franchise.user.first_name }} {{ structure.franchise.user.last_name }}</p>
+      <p>Gérant de la structure: {{ structure.manager.first_name }} {{ structure.manager.last_name }}</p>
       <p>Adresse : {{ structure.address }}</p>
     </div>
   
     <div>
-      <p>{{ structure.franchise.user.email }}</p>
+      <p>Contact : {{ structure.manager.email }}</p>
+      {% if structure.is_active %}
+        <p>Actif </p>
+      {% else %}
+        <p>désactif</p>
+      {% endif %}
+    </div>
+      <div>
+        <input type="checkbox" id="{{ structure.name }}" class="checkbox">
+        <label for="{{ structure.name }}" class="label"></label>
     </div>
 
     <div>

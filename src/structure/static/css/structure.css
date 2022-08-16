@@ -1,3 +1,15 @@
+button {
+  width: 134px;
+  height: 48px;
+  background: #171717;
+  border: none;
+  border-radius: 9px;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+
 .name_account {
   text-align: center;
   margin-top: 80px;
@@ -19,6 +31,18 @@ h3 {
   margin-top: 60px;
 }
 
+/*----------------- MESSAGE : Notification update form  -----------------*/
+.container-message {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 100px;
+  background-color: #00ACC1;
+  border-radius: 8px;
+}
+
+/*----------------- PERMISSIONS -----------------*/
 .containers_permission {
   display: flex;
   flex-wrap: wrap;
@@ -63,18 +87,6 @@ h3 {
   left: 5px;
   transition: all 0.3s;
   border-radius: 50%;
-}
-
-button {
-  width: 134px;
-  height: 48px;
-  background: #171717;
-  border: none;
-  border-radius: 9px;
-}
-button a {
-  color: white;
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=structure.css.map */

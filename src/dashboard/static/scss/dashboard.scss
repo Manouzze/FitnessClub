@@ -7,6 +7,9 @@
   @include list-container;
   letter-spacing: 5px;
 }
+.container-structures:hover{
+  box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 0.25);
+}
 
 button{
   @include button;
@@ -21,6 +24,11 @@ button{
 .container-right{
   width: 20%;
   height: 100%;
+  #current_action{
+    display: flex ;
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .search-bar{
@@ -58,6 +66,7 @@ button{
 }
 
 #salle, #franchise, #manager{
+  box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 0.25);
   min-width: 300px;
   min-height: 215px;
   flex-direction: column;

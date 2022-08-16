@@ -68,12 +68,15 @@ class User(AbstractBaseUser):
 
     def __str__(self):
         return self.email
+
     class Meta:
         ordering = ('-created_at', '-updated_at', )
+
     def get_full_name(self):
         if self.first_name:
             return f'{self.first_name}  {self.last_name}'
         return self.email.split('@')[0]
+        
     def has_perm(self, perm, obj=None):
         return True
     def has_module_perms(self, app_label):

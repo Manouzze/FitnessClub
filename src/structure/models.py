@@ -1,53 +1,39 @@
 from django.urls import reverse
 from django.db import models
 from account.models import User
-
+from django.utils.text import slugify
 from franchise.models import Franchise
 
 
 
 class Permission(models.Model):
     name = models.CharField(max_length=20, null=True)
-    mailling = models.BooleanField(default=True)
-    planning = models.BooleanField(default=True)
-    promotion = models.BooleanField(default=True)
-    smoothie = models.BooleanField(default=False)
-    distributer = models.BooleanField(default=False)
-    spa = models.BooleanField(default=False)
-    statistic = models.BooleanField(default=False)
-    coaching = models.BooleanField(default=True)
-    shower = models.BooleanField(default=True)
-    entretien = models.BooleanField(default=False)
-    proteine = models.BooleanField(default=True)
-    massage = models.BooleanField(default=False)
-    evenement = models.BooleanField(default=False)
-    concours = models.BooleanField(default=False)
-    nettoyage = models.BooleanField(default=False)
-    assurance = models.BooleanField(default=False)
+    icon = models.ImageField(upload_to="icons/permissions", blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+
     def __str__(self):
         return str(self.name)
+
+
 
 class Structure(models.Model):
     name = models.CharField(max_length=20)
-    slug = models.SlugField(max_length=20)
     franchise = models.ForeignKey(Franchise, on_delete = models.SET_NULL, null = True)
+    manager = models.ForeignKey(User, on_delete = models.SET_NULL, null = True)
+    permission = models.ManyToManyField(Permission,blank=True, null=True)
+    slug = models.SlugField(max_length=20)
     address = models.TextField(max_length=100)
     description = models.TextField(max_length=500)
-    is_active = models.BooleanField(default=True)
-    permissions = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to="icons/structures", null=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return str(self.name)
+        
+    def save(self, *args, **kwargs): #remplissage du slug automatique
+        self.slug = slugify(self.name)
+        super(Structure, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('structure_detail', args=[self.slug]) 
+        return reverse('detail_structure', args=[self.slug]) 
 
-
-class StructurePerm(models.Model):
-    structure = models.ForeignKey(Structure, on_delete=models.CASCADE, null=True)
-    permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
-    is_active = models.BooleanField(default=True)
-
-    def __str__(self):
-        return str(self.structure)

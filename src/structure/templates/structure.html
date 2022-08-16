@@ -10,12 +10,15 @@
 <link rel="stylesheet" href="{% static 'css/structure.css' %}">
 
 
+<!--------------  Javascript  ----------------->
+
+<script src="{% static 'js/script.js' %}"></script>
 
 <!--------------  Title  ----------------->
 
 
 <div class="name_account">
-  <p>Structure {{ structures.name }}</p>
+  <p>Structure {{ structures }}</p>
 </div>
 
 
@@ -26,17 +29,21 @@
 <div class="details">
 
   <div>
-    <img src="{{ structures.image.url }}" alt="{{ structures.name }}">
+    <a href=""><img src="{{ structures.image.url }}" alt="structure"></a>
   </div>
 
   <div>
-    <p>adresse : {{ structures.address }}</p>
     <p>Franchise : {{ structures.franchise }}</p>
+    <p>Adresse : {{ structures.address }}</p>
   </div>
 
   <div>
-    <p>Gérand de la franchise : {{ structures.franchise.user.first_name }} {{ structures.franchise.user.last_name }}</p>
-    <p>Responsable de la structure: Roberta Miam</p>
+    <p>Gérand de la franchise : {{ structures.franchise.manager.first_name }} {{ structures.franchise.manager.last_name }}</p>
+    <p>Contact : {{ structures.franchise.manager.email }}</p>
+  </div>
+  <div>
+    <p>Gérand de la structure : {{ structures.structure.manager.first_name }} {{ structures.manager.last_name }}</p>
+    <p>Contact : {{ structures.manager.email }}</p>
   </div>
   
 </div>
@@ -49,20 +56,43 @@
 </div>
 
 
+
 <!--------------  Permission  ----------------->
-<h3>Permissions</h3>
+<h3><img src="{% static 'icons/menu/permissions.png' %}">Permissions</h3>
 
-<!--------------  Message  ----------------->
-{% include 'alerts.html' %}
 
-<!--------------  Formulaire user  ----------------->
-<div class="formulaire">
-  <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Créer</button>
-  </form>
-</div>
+<div class="containers_permission">
+  
+  {% for structureperm in structureperms %}
+    {% for perm in structureperm.permission.all %}
+    
+      <div class="single_permission">
+
+        <img src="{{ perm.icon.url }}" alt="icon">
+        <p class="permissions"> {{ perm }} {{ perm.is_active }}</p>
+        
+        <div>
+          <input type="checkbox" id="{{ perm }}" class="checkbox">
+          <label for="{{ perm }}" class="label"></label>
+        </div>
+        
+      </div> 
+        
+        {% endfor %}  
+  {% endfor %}  
+</div>  
+  
+
+  
+  <!--------------  Update Formulaire  ----------------->
+
+
+
+  <p>{% include 'formulaires/update_permissions.html' %}</p>
+    
+
+  <button type="button"><a href="{% url 'delete_structure' structures.id %}"><img src="">Supprimer</a></button>
+    
 
 
 {% endblock %}

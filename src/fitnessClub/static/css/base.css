@@ -26,6 +26,7 @@ body {
 .container_global .sidebar .logo p {
   font-size: 20px;
   margin-top: 80px;
+  letter-spacing: 3px;
 }
 .container_global .sidebar a {
   display: flex;
@@ -39,16 +40,16 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 100px;
-  border: solid 1px black;
+  border: solid 1px rgba(160, 160, 160, 0.831);
   height: 70px;
   width: 70px;
   background: #292929;
   background-size: 100px 100px;
   border-radius: 50%;
-  filter: drop-shadow(0 0 0.7rem #00ACC1);
+  filter: drop-shadow(0 0 0.7rem #ffffff);
 }
 .container_global .sidebar .profil .background-avatar img {
-  max-width: 50px;
+  max-width: 57px;
 }
 .container_global .sidebar .profil .background-avatar a:last-child p {
   margin-top: 25px;
@@ -58,14 +59,29 @@ body {
   display: flex;
   flex-direction: column;
 }
-.container_global .sidebar .menu a {
-  margin-top: 45px;
+.container_global .sidebar .menu .single-link {
+  display: flex;
 }
-.container_global .sidebar .menu a img {
-  margin: 0 15px;
+.container_global .sidebar .menu .single-link .cube {
+  width: 7%;
 }
-.container_global .sidebar .menu .déconnexion {
-  width: 25px;
+.container_global .sidebar .menu .single-link a {
+  width: 100%;
+}
+.container_global .sidebar .menu .single-link a svg {
+  margin: 15px;
+}
+.container_global .sidebar .menu .single-link a .déconnexion {
+  width: 26px;
+}
+.container_global .sidebar .menu .single-link:hover .cube {
+  background-color: #00ACC1;
+}
+.container_global .sidebar .menu .single-link:hover a {
+  color: #00ACC1;
+}
+.container_global .sidebar .menu .single-link:hover a svg path {
+  fill: #00ACC1;
 }
 .container_global .container_content {
   padding: 0 100px;

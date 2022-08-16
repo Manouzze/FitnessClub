@@ -31,7 +31,7 @@
       </div>
       <div class="profil">
         <div class="background-avatar">
-          <a href="{% url 'account' %}"><img src="{{ user.avatar }}" alt="avatar"></a>
+          <a href="{% url 'account' %}"><img src="{{ user.avatar.url }}" alt="avatar"></a>
         </div>
       </div>
       <a href="{% url 'account' %}"><p>{{ user.first_name|title }} {{ user.last_name|title }}</p></a>
@@ -39,12 +39,38 @@
 
       <div class="menu">
         {% if request.user.is_staff %}
-        <a href="{% url 'dashboard' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="dashboard">Dashboard</a>
-        <a href="{% url 'list_franchise' %}"><img src="{% static 'icons/menu/list_franchise.png' %}" alt="list franchise">Liste des partenaires</a>
-        <a href="{% url 'list_structure' %}"><img src="{% static 'icons/menu/list_structure.png' %}" alt="list structure">Liste des Structure</a>
+
+        <div class="single-link">
+          <div class="cube"></div>
+          <a href="{% url 'dashboard' %}">{% include 'svg/svg_dashboard.html' %}
+            Dashboard</a>
+        </div>
+        
+        <div class="single-link">
+          <div class="cube"></div>
+          <a href="{% url 'list_franchise' %}">{% include 'svg/svg_list_franchise.html' %}
+            Liste des partenaires
+          </a>
+        </div>
+        
+        <div class="single-link">
+          <div class="cube"></div>
+          <a href="{% url 'list_structure' %}">{% include 'svg/svg_list_structure.html' %}
+            Liste des Structure</a>
+        </div>
         {% endif %}
-        <a href="{% url 'account' %}"><img src="{% static 'icons/menu/account.png' %}" alt="account">Mon compte</a>
-        <a href="{% url 'logout' %}"><img src="{% static 'icons/menu/croix.png' %}" alt="Déconnexion" class="déconnexion">Déconnexion</a>
+        <div class="single-link">
+          <div class="cube"></div>
+          <a href="{% url 'account' %}">{% include 'svg/svg_user_account.html' %}
+            Mon compte</a>
+        </div>
+        
+        <div class="single-link">
+          <div class="cube"></div>
+          <a href="{% url 'logout' %}">{% include 'svg/svg_deco.html' %}
+            Déconnexion</a>
+        </div>
+
       </div>
       
     </div>

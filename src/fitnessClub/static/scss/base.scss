@@ -25,6 +25,7 @@ body{
       p{
         font-size: 20px;
         margin-top: 80px;
+        letter-spacing: 3px;
       }
     }
     a{
@@ -37,16 +38,16 @@ body{
     .profil{
       @include flex-center; 
       margin-top: 100px;
-      border: solid 1px black;
+      border: solid 1px rgba(160, 160, 160, 0.831);
       height: 70px;
       width: 70px;
-      background: #292929;
+      background: $blacklight;
       background-size: 100px 100px;
       border-radius: 50%;
-      filter: drop-shadow(0 0 0.70rem #00ACC1);
+      filter: drop-shadow(0 0 0.70rem #ffffff);
       .background-avatar{
         img{
-          max-width: 50px;
+          max-width: 57px;
         }
         a:last-child{
           p{
@@ -60,15 +61,40 @@ body{
       margin-top: 40px;
       display: flex;
       flex-direction: column;
-      a{
-        margin-top: 45px;
-        img{
-          margin: 0 15px;
+      
+      .single-link{
+        display: flex;
+
+        .cube{
+         width: 7%;
+        }
+        
+        a{
+          width: 100%;
+          svg{
+            margin:15px;
+          }
+          .déconnexion{
+            width: 26px;
+          }
         }
       }
-      .déconnexion{
-        width: 25px;
+      .single-link:hover{
+        .cube{
+          background-color: $turquoise;
+        }
+        a{
+          color:$turquoise;
+          svg{
+            path{
+              fill: $turquoise;
+            }
+          }
+        }
       }
+
+    
+      
     }
     
   }
@@ -76,7 +102,7 @@ body{
   .container_content{
     padding: 0 100px;
     width: 80%;
-    background-color: #292929;
+    background-color: $blacklight;
     background-image: url(../images/medal-gold.svg) ;
     background-repeat: no-repeat;
     background-position: right top;
@@ -85,3 +111,4 @@ body{
 
 
 }
+

@@ -18,10 +18,10 @@
 
 <!--------------  Formulaire user  ----------------->
 <div class="formulaire">
-  <form method="POST" action="{% url 'add_Structure' %}">
+  <form method="POST" action="{% url 'create_structure' %}">
         {% csrf_token %}
         {{ form }}
-        <button type="submit" >Créer</button>
+        <button type="submit">Créer</button>
   </form>
 </div>
 

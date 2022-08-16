@@ -7,10 +7,12 @@ from django.contrib import auth, messages
 
 # Create your views here.
 def list_franchise(request):
-    print('Franchise ===>',Franchise)
     franchises = Franchise.objects.filter(is_active=True)
-    print(franchises)
-    return render(request, 'list_franchise.html', context={'franchises': franchises,})
+    structures = Structure.objects.filter(is_active=True)
+    # current_user = request.user
+    # user = Structure.objects.filter(manager = current_user)
+    # structure = user.count()
+    return render(request, 'list_franchise.html', context={'franchises': franchises, 'structures':structures,})
 
 #--------------* details FRANCHISE *--------------#
 def franchise(request, franchise_slug):

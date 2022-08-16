@@ -7,7 +7,7 @@
 @mixin button {
     width: 134px;
     height: 48px;
-    background: #171717;
+    background: $blackdark;
     border: none;
     border-radius: 9px;
     a{
@@ -24,6 +24,9 @@
   border-radius: 17px;
   min-height: 140px;
   margin-bottom: 30px;
-
-
 }
+
+//COLORS
+$turquoise : #00ACC1;
+$blackdark:#171717;
+$blacklight:#292929;

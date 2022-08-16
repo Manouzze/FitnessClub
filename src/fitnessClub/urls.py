@@ -16,8 +16,9 @@ Including another URLconf
 import imp
 from django.contrib import admin
 from django.urls import include, path
-from structure.views import list_structure, search, structure
-from fitnessClub import settings
+from structure.views import list_structure, search
+# from fitnessClub import settings
+from django.conf import settings
 from django.conf.urls.static import static
 from dashboard.views import dashboard
 from franchise.views import list_franchise
@@ -29,21 +30,22 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
 
+    path('dashboard/', include("dashboard.urls")),
     path('account/', include("account.urls")),
-    path('account/', account, name='account'),
-
     path('franchise/', include("franchise.urls")),
+    path('structure/', include("structure.urls")),
+
+    path('account/', account, name='account'),
     path('dashboard/', dashboard, name='dashboard'),
     
-    path('structure/<slug:structure_slug>/', structure, name='structure_detail'),
     path('franchise/<slug:franchise_slug>/', franchise, name='franchise'),
+
     
     path('franchise/', list_franchise, name='list_franchise'),
     path('structure/', list_structure, name='list_structure'),
-    path('structure/', include("structure.urls")),
 
     path('search/', search, name='search'),
 
 
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

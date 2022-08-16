@@ -61,7 +61,7 @@ def logoutUser(request):
 
 def account(request):
     current_user = request.user
-    franchises = Franchise.objects.filter(user=current_user)
+    franchises = Franchise.objects.filter(manager=current_user)
     structures = Structure.objects.all()
     return render(request, 'account.html', context={'franchises': franchises, 'structures': structures, })
 

@@ -57,9 +57,9 @@
 
       <div id="add_structure" class="container-structures">
         <p>Ajouter une nouvelle Structure</p>
-        <a href="{% url 'add_Structure' %}"><img src="{% static 'icons/structure/1.png' %}" alt="ajouter une salle"></a>
+        <a href="{% url 'create_structure' %}"><img src="{% static 'icons/structure/1.png' %}" alt="ajouter une salle"></a>
         <div>
-          <button type="button"><a href="{% url 'add_Structure' %}">Voir plus</a></button>
+          <button type="button"><a href="{% url 'create_structure' %}">Voir plus</a></button>
         </div>
       </div>
 
@@ -69,12 +69,18 @@
           <button type="button"><a href="{% url 'add_User' %}">Voir plus</a></button>
         </div>
       </div>
+      <div id="add_permission" class="container-structures">
+        <p>Ajouter unu nouvelle permission</p>
+        <div>
+          <button type="button"><a href="{% url 'add_Permission' %}">Voir plus</a></button>
+        </div>
+      </div>
   </div>
   
   
   <!--------------  Block Right  ----------------->
   <div class="container-right">
-    <div class="container-structures" id="manager">
+    <div class="container-structures" id="current_action">
       <p>40</p>
       <p>Partenaires</p>
       <p>Partenaires</p>

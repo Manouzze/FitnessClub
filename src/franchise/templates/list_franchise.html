@@ -37,7 +37,7 @@
   
   <!--------------  Add Franchise  ----------------->
   <div class="add-franchise">
-    <a href=""><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une salle</a>
+    <a href="{% url 'add_Franchise' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une franchise</a>
   </div>
   
 
@@ -47,15 +47,25 @@
 
   
 {% for franchise in franchises %}
-
-  <div class="container-franchise">
+<div class="container-franchise">
+    <a href=""><img src="{% static 'icons/structure/franchise.png' %}" alt="franchise"></a>
     <div>
       <p>Franchise : {{ franchise.name }}</p>
-      <p>laval-montpellier@FitnessClub.com</p>
+      <p>Gérant : {{ franchise.manager.first_name }} {{ franchise.manager.last_name }}</p>
     </div>
+
     <div>
-      <p>87 rue laval, 34000 Montpellier</p>
-      <p>je ne sais pas quoi marqué pour le moment</p>
+      <p>Nombre de structure : {{ structures }}</p>
+      <p>Contact : {{ franchise.manager.email }}</p>
+    </div>
+    
+    <div>
+      <p>Contact : {{ structure.manager.email }}</p>
+      {% if franchise.is_active %}
+        <p>Actif </p>
+      {% else %}
+        <p>désactif</p>
+      {% endif %}
     </div>
     <div>
       <button type="button"><a href="{{ franchise.get_absolute_url }}">Voir plus</a></button>

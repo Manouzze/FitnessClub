@@ -1,0 +1,18 @@
+
+
+<!--------------  Message  ----------------->
+
+<p>{% include 'alerts.html' %}</p>
+
+
+
+<!--------------  Form  ----------------->
+
+<form method="POST" action="{% url 'delete_structure' form.id %}">
+  {% csrf_token %}
+
+  <p>{{ form }}</p>
+
+  <button type="submit">Supprimer</button>
+</form>
+  

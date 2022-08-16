@@ -10,7 +10,7 @@ class Franchise(models.Model):
     slug = models.SlugField(max_length=20)
     description = models.TextField(max_length=500)
     is_active = models.BooleanField(default=True)
-    user = models.ForeignKey(User, on_delete = models.SET_NULL, null = True)
+    manager = models.ForeignKey(User, on_delete = models.SET_NULL, null = True)
     
     def get_absolute_url(self):
         return reverse('franchise', args=[self.slug]) 

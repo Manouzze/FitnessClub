@@ -1,0 +1,183 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="">
+
+
+<!--------------  Title  ----------------->
+    <div class="name_account">
+      <h3>Modifier les Permissions</h3>
+    </div>
+      
+<!--------------  Message  ----------------->
+{% include 'alerts.html' %}
+
+<!--------------  Formulaire user  ----------------->
+<div class="formulaire">
+  <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Modifier</button>
+  </form>
+</div>
+
+<form method="POST">
+
+  <p>Abonnement : {{ structures.permissions.name }}</p>
+
+  <div class="containers_permission">
+  
+    <div class="single_permission">
+      <img src="../../static/icons/option/mailling.png" alt="mailling">
+      <p id="mailling-data">Mailing</p>
+      <div>
+        <input type="checkbox" id="mailing" class="checkbox" checked="{{structures.permissions.mailling}}">
+        <label for="mailing" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/planning.png" alt="planning">
+      {{ structures.permissions.planning }}
+      <div>
+        <input type="checkbox" id="planning" class="checkbox">
+        <label for="planning" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/promotion.png" alt="promotion">
+      <p>{{ structures.permissions.promotion }}</p>
+      <div>
+        <input type="checkbox" id="promotion" class="checkbox">
+        <label for="promotion" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/glass.png" alt="smoothie">
+      {{ structures.permissions.smoothie }}
+      <div>
+        <input type="checkbox" id="smoothie" class="checkbox">
+        <label for="smoothie" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/distributeur.png" alt="distributer">
+      {{ structures.permissions.distributer }}
+      <div>
+        <input type="checkbox" id="distributer" class="checkbox">
+        <label for="distributer" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/spa.png" alt="spa">
+      {{ structures.permissions.spa }}
+      <div>
+        {% if structures.permissions.spa %}
+        <input type="checkbox" id="spa" class="checkbox" checked>
+        {% else %}
+        <input type="checkbox" id="spa" class="checkbox">
+        {% endif %}
+        <label for="spa" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/statistic.png" alt="statistic">
+      {{ structures.permissions.statistic }}
+      <div>
+        {% if structures.permissions.statistic %}
+        <input type="checkbox" id="statistic" class="checkbox" checked>
+        {% else %}
+        <input type="checkbox" id="statistic" class="checkbox">
+        {% endif %}
+        <label for="statistic" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/coaching.png" alt="coaching">
+      {{ structures.permissions.coaching }}
+      <div>
+        <input type="checkbox" id="coaching" class="checkbox" checked="true">
+        <label for="coaching" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/shower.png" alt="shower">
+      {{ structures.permissions.shower }}
+      <div>
+        <input type="checkbox" id="shower" class="checkbox">
+        <label for="shower" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/entretien.png" alt="entretien">
+      {{ structures.permissions.entretien }}
+      <div>
+        <input type="checkbox" id="entretien" class="checkbox">
+        <label for="entretien" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/proteine.png" alt="proteine">
+      {{ structures.permissions.proteine }}
+      <div>
+        <input type="checkbox" id="proteine" class="checkbox">
+        <label for="proteine" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/massage.png" alt="massage">
+      {{ structures.permissions.massage }}
+      <div>
+        <input type="checkbox" id="massage" class="checkbox">
+        <label for="massage" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/evenement.png" alt="evenement">
+      {{ structures.permissions.evenement }}
+      <div>
+        <input type="checkbox" id="evenement" class="checkbox">
+        <label for="evenement" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/concours.png" alt="concours">
+      {{ structures.permissions.concours }}
+      <div>
+        <input type="checkbox" id="concours" class="checkbox">
+        <label for="concours" class="label"></label>
+      </div>
+    </div>
+
+    <div class="single_permission">
+      <img src="../../static/icons/option/nettoyage.png" alt="nettoyage">
+      {{ structures.permissions.nettoyage }}
+      <div>
+        <input type="checkbox" id="nettoyage" class="checkbox">
+        <label for="nettoyage" class="label"></label>
+      </div>
+    </div>
+
+  </div>
+
+  <button type="submit">Enregistrer</button>
+  
+</form>
+
+{% endblock %}
