@@ -5,11 +5,19 @@ button{
 }
 .name_account{
   text-align: center;
-  margin-top: 80px;
+  margin-top: 160px;
+  margin-bottom: 120px;
   font-size: 16px;
 }
 h3{
   margin-top: 100px;
+  text-align: center;
+}
+h4{
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-top: 50px;
 }
 .details{
   display: flex;
@@ -17,9 +25,12 @@ h3{
   justify-content: space-around;
   align-items: center;
   
+  
 }
+
 .description_account{
-  margin-top:60px;
+  margin-top:80px;
+  color:rgba(255, 255, 255, 0.6);
 }
 
 
@@ -28,9 +39,9 @@ h3{
 .container-message{
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   width: 300px;
-  height: 100px;
+  height: 68;
   background-color: #00ACC1;
   border-radius: 8px ;
 }
@@ -51,37 +62,59 @@ h3{
     align-items: center;
     min-width: 200px;
     box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.25);
+    p{
+      
+    }
   }
 }
 
-.checkbox{
-  display: none;
-  &:checked + label:after{
-    transform: translateX(15px);
+
+.True{
+  .checked{
+    display: none;
   }
-  &:checked + label{
-    background: #00ACC1;
+  .label{
+    display: inline-block;
+    width: 40px;
+    height: 23px;
+    background:#00ACC1;
+    position: relative;
+    transition: all .3s;
+    border-radius: 20px;
+    &:after{
+      content: "";
+      height: 16px;
+      width: 16px;
+      background: rgb(255, 255, 255);
+      position: absolute;
+      top: 2.75px;
+      left: 5px;
+      border-radius: 50%;
+    }
+  }
+  
+}
+
+/*----------------- Buttons -----------------*/
+.btn-update{
+  margin-top: 70px;
+  text-align: center;
+  button{
+    margin-top: 20px;
   }
 }
-.label{
-  display: inline-block;
-  width: 40px;
-  height: 23px;
-  background:gray;
-  position: relative;
-  transition: all .3s;
-  border-radius: 20px;
-  cursor: pointer;
-  
-  &:after{
-    content: "";
-    height: 16px;
-    width: 16px;
-    background: rgb(255, 255, 255);
-    position: absolute;
-    top: 2.75px;
-    left: 5px;
-    transition: all .3s;
-    border-radius: 50%;
+.btn-delete{
+  margin: 30px;
+  display: flex;
+  justify-content: end;
+  button{
+    background-color: #C21A1A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      margin-left: 4px;
+    }
   }
+  
 }

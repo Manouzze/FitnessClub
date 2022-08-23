@@ -4,6 +4,11 @@
   margin-top: 100px;
   text-align: center;
   font-style: bold;
+  .name-franchise{
+    margin-top: 65px;
+    margin-bottom: 75px;
+    font-weight: bolder;
+  }
 }
 h3{
   text-align: center;
@@ -22,7 +27,20 @@ h3{
   line-height: 170%;
   
 }
-
+.add-structure{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: end;
+  a{
+    display: flex;
+    align-items: center;
+    color: white;
+ 
+    img{
+      margin-right: 8px ;
+    }
+  }
+}
 .container-structures{
   @include list-container;
 }

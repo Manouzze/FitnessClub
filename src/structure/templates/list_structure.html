@@ -49,25 +49,32 @@
       <a href="{{ structure.get_absolute_url }}"><img src="{{ structure.image.url }}" alt="{{ structure.name }}"></a>
     </div>
     <div>
-      <p>Franchise : {{ structure.franchise }}</p>
+      <!-- <p>Franchise : {{ structure.franchise }}</p> -->
       <p>Structure : {{ structure.name }}</p>
+      <p>Adresse : {{ structure.address }}</p>
     </div>
     <div>
       <p>Gérant de la structure: {{ structure.manager.first_name }} {{ structure.manager.last_name }}</p>
-      <p>Adresse : {{ structure.address }}</p>
+      <p>Contact : {{ structure.manager.email }}</p>
     </div>
   
     <div>
-      <p>Contact : {{ structure.manager.email }}</p>
       {% if structure.is_active %}
-        <p>Actif </p>
+      
+      <div class="container-checkbox-checked">
+        <input type="checkbox" id="{{ structure.name }}" class="checkbox-checked">
+        <label for="{{ structure.name }}" class="label-checked"></label>
+        <span>Active</span>
+      </div>
+      
       {% else %}
-        <p>désactif</p>
-      {% endif %}
-    </div>
-      <div>
+      <div class="container-checkbox">
         <input type="checkbox" id="{{ structure.name }}" class="checkbox">
         <label for="{{ structure.name }}" class="label"></label>
+        <span>Désactive</span>  
+      </div>
+        
+      {% endif %}
     </div>
 
     <div>

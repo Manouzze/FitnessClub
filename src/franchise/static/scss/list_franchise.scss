@@ -68,3 +68,72 @@ h3{
     }
   }
 }
+
+
+
+
+.container-checkbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{
+    margin-left: 5px;
+  }
+  .checkbox{
+    display: none;  
+    }
+  .label{
+    display: inline-block;
+    width: 40px;
+    height: 23px;
+    background:gray;
+    position: relative;
+  
+    border-radius: 20px;
+    
+    &:after{
+      content: "";
+      height: 16px;
+      width: 16px;
+      background: rgb(255, 255, 255);
+      position: absolute;
+      top: 2.75px;
+      left: 5px;
+      border-radius: 50%;
+    }
+  }
+}
+
+
+
+.container-checkbox-checked{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{
+    margin-left: 5px;
+  }
+  .checkbox-checked{
+    display: none;
+  }
+  .label-checked{
+    display: inline-block;
+    width: 40px;
+    height: 23px;
+    background:#00ACC1;
+    position: relative;
+    
+    border-radius: 20px;
+    
+    &:after{
+      content: "";
+      height: 16px;
+      width: 16px;
+      background: rgb(255, 255, 255);
+      position: absolute;
+      top: 2.75px;
+      right: 5px;
+      border-radius: 50%;
+      }
+  }
+}

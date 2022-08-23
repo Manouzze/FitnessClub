@@ -1,0 +1,42 @@
+button {
+  width: 134px;
+  height: 48px;
+  background: #171717;
+  border: none;
+  border-radius: 9px;
+  color: white;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+.container-structures {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 17px;
+  min-height: 140px;
+  margin-bottom: 30px;
+  min-width: 500px;
+  min-height: 230px;
+}
+
+body {
+  color: white;
+  background-color: #171717;
+}
+body div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+body div form {
+  display: flex;
+  flex-direction: column;
+  background-color: #292929;
+}
+
+/*# sourceMappingURL=delete_structure.css.map */

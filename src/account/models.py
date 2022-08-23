@@ -40,12 +40,20 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    """
-    Custom abstract user Model.
-    """
+    
+    ROLE = (
+        ('staff', 'staff'),
+        ('franchise manager', 'franchise manager'),
+        ('structure manager', 'structure manager'),
+        ('employee', 'employee'),
+
+    )
+
     # Names
     first_name = models.CharField(max_length=15, blank=True, null=True)
     last_name = models.CharField(max_length=15, blank=True, null=True)
+    # rôles
+    role = models.CharField(max_length=100, blank=True, null=True, choices=ROLE)
     # contact
     email = models.EmailField(unique=True)  # require
     number = models.PositiveIntegerField(blank=True, null=True)
@@ -55,7 +63,7 @@ class User(AbstractBaseUser):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     # Permission
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     # Main Field for authentication

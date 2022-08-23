@@ -22,24 +22,25 @@ from django.conf import settings
 from django.conf.urls.static import static
 from dashboard.views import dashboard
 from franchise.views import list_franchise
-from account.views import account
+from account.views import account, activate
 from franchise.views import franchise
-
+from permission.views import update_permission
+from permission.views import add_Permission
 
 urlpatterns = [
 
     path('admin/', admin.site.urls),
 
-    path('dashboard/', include("dashboard.urls")),
     path('account/', include("account.urls")),
     path('franchise/', include("franchise.urls")),
     path('structure/', include("structure.urls")),
 
+    path('ajouter/permission/', add_Permission, name='add_Permission'),
     path('account/', account, name='account'),
     path('dashboard/', dashboard, name='dashboard'),
-    
+    path('update/<int:id>/', update_permission, name='update_permission' ),
     path('franchise/<slug:franchise_slug>/', franchise, name='franchise'),
-
+    path('activate/<uidb64>/<token>/', activate, name='activate'),
     
     path('franchise/', list_franchise, name='list_franchise'),
     path('structure/', list_structure, name='list_structure'),

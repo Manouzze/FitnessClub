@@ -1,5 +1,5 @@
 from django.contrib import admin
-from structure.models import Structure, Permission
+from structure.models import Structure
 
 
 class StrucureAdmin(admin.ModelAdmin):
@@ -7,4 +7,4 @@ class StrucureAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Structure, StrucureAdmin)
-admin.site.register(Permission)
+

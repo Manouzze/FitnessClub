@@ -1,0 +1,28 @@
+@import '../../../fitnessClub/static/scss/mixin.scss';
+
+button{
+  @include button;
+  color: white;
+}
+.container-structures{
+  @include list-container;
+  min-width: 500px;
+  min-height: 230px;
+}
+body{
+  color: white;
+  background-color: $blackdark;
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    form{
+      display: flex;
+      flex-direction: column;
+      background-color: $blacklight;
+      
+    }
+
+  }
+}

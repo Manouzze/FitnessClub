@@ -14,12 +14,12 @@
 
 <div class="name_account">
   <p>Partenaire de FitnessClub</p>
-  <p>{{ franchises.user.first_name }} {{ franchises.user.last_name }}</p>
+  <p>{{ franchises.manager.first_name }} {{ franchises.manager.last_name }}</p>
+  <p class="name-franchise">Franchise {{ franchises.name }}</p>
 </div>
 
 <!--------------  Descritpion  ----------------->
 
-<h3>Franchise {{ franchises.name }}</h3>
 
 <div class="details_account">
   <div class="details">
@@ -36,7 +36,12 @@
 <div class="description_account">
   {{ franchises.description }}
 </div>
-
+  
+  <!--------------  Add structure  ----------------->
+  <div class="add-structure">
+    <a href="{% url 'create_structure' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une structure</a>
+  </div>
+  
 <!--------------  Structure  ----------------->
 {% if request.user %}
   {% for structure in structures %}
@@ -48,13 +53,20 @@
     <div>
       
       <p>Structure : {{ structure.name }}</p>
+      <p>Gérand : {{ structure.manager.first_name }} {{ structure.manager.last_name }}</p>
     </div>
     <div>
       <p>Adresse : {{ structure.address }}</p>
+      <p>{{ structure.franchise.manager.email }}</p>
     </div>
     
     <div>
       <p>{{ structure.franchise.manager.email }}</p>
+      {% if structure.is_active %}
+      <p>Actif </p>
+      {% else %}
+      <p>Désactif</p>
+      {% endif %}
     </div>
     
     <div>

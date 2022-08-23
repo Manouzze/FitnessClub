@@ -39,7 +39,7 @@
     </div>
     <form method="POST" action="{% url 'add_User' %}">
       {% csrf_token %}
-      {{ formsignup }}
+      {{ form }}
       <button type="submit" >S’inscrire</button>
     </form>
   </div>

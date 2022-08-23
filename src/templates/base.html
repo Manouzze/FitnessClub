@@ -38,7 +38,8 @@
 
 
       <div class="menu">
-        {% if request.user.is_staff %}
+
+      {% if request.user.is_staff %}
 
         <div class="single-link">
           <div class="cube"></div>
@@ -58,7 +59,9 @@
           <a href="{% url 'list_structure' %}">{% include 'svg/svg_list_structure.html' %}
             Liste des Structure</a>
         </div>
-        {% endif %}
+
+      {% endif %}
+
         <div class="single-link">
           <div class="cube"></div>
           <a href="{% url 'account' %}">{% include 'svg/svg_user_account.html' %}

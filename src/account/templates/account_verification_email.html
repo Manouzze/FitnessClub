@@ -1,0 +1,13 @@
+{% autoescape off %}
+
+
+Hello {{user.first_name}} 🤖,
+
+
+Veuillez cliquer que le lien ci-dessous pour activer votre compte.
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+Toute l'équipe de FitnessClub vous souhaite la bienvenue. ✌️
+
+
+{% endautoescape %}

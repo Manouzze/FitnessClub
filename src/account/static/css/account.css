@@ -28,11 +28,9 @@ h3 {
 }
 
 .details_account {
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
-}
-.details_account .details {
-  width: 50%;
+  justify-content: space-evenly;
 }
 
 .description_account {
@@ -48,6 +46,20 @@ h3 {
   border-radius: 17px;
   min-height: 140px;
   margin-bottom: 30px;
+}
+
+.add-franchise {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: end;
+}
+.add-franchise a {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.add-franchise a img {
+  margin-right: 8px;
 }
 
 /*# sourceMappingURL=account.css.map */

@@ -35,12 +35,22 @@
 </form>
 
   
-  <!--------------  Add Franchise  ----------------->
+<!--------------  Add Franchise  ----------------->
+<!--------------  for Staff  ----------------->
+{% if user.role == 'franchise manager' %} 
+<div class="add-franchise">
+  <a href="{% url 'add_Franchise' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="">Ouvrir une nouvelle franchise</a>
+</div>
+
+  
+  <!--------------  for manager franchise : demande autorisation   ----------------->
+  {% elif user.role == 'staff' %} 
   <div class="add-franchise">
-    <a href="{% url 'add_Franchise' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une franchise</a>
+    <a href="{% url 'add_Franchise' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="">Ajouter une franchise</a>
   </div>
   
-
+  
+{% endif %}
 
 
   <!--------------  Structures  ----------------->
@@ -48,23 +58,32 @@
   
 {% for franchise in franchises %}
 <div class="container-franchise">
-    <a href=""><img src="{% static 'icons/structure/franchise.png' %}" alt="franchise"></a>
+    <a href=""><img src="{% static 'icons/franchise.png' %}" alt="franchise"></a>
     <div>
       <p>Franchise : {{ franchise.name }}</p>
-      <p>Gérant : {{ franchise.manager.first_name }} {{ franchise.manager.last_name }}</p>
     </div>
-
+    
     <div>
-      <p>Nombre de structure : {{ structures }}</p>
+      <p>Gérant : {{ franchise.manager.first_name }} {{ franchise.manager.last_name }}</p>
       <p>Contact : {{ franchise.manager.email }}</p>
     </div>
     
     <div>
-      <p>Contact : {{ structure.manager.email }}</p>
       {% if franchise.is_active %}
-        <p>Actif </p>
+      
+      <div class="container-checkbox-checked">
+        <input type="checkbox" id="{{ franchise.name }}" class="checkbox-checked">
+        <label for="{{ franchise.name }}" class="label-checked"></label>
+        <span>Active</span>
+      </div>
+      
       {% else %}
-        <p>désactif</p>
+      <div class="container-checkbox">
+        <input type="checkbox" id="{{ franchise.name }}" class="checkbox">
+        <label for="{{ franchise.name }}" class="label"></label>
+        <span>Désactive</span>  
+      </div>
+        
       {% endif %}
     </div>
     <div>

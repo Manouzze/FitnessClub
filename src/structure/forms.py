@@ -1,6 +1,8 @@
 from dataclasses import field
 from structure.models import Structure
 from django.forms import ModelForm
+from permission.models import Permission
+from django.db import models
 # from django.views.generic import UpdateView
 from django import forms
 
@@ -10,10 +12,16 @@ class AddStructureForm(ModelForm):
         fields = ('name', 'permission','franchise', 'address', 'description', 'is_active')
 
 
-class UpdatePermission(ModelForm):
+
+class StructureRequestManagerForm(forms.Form):
+    firstname = models.CharField(max_length=100)
+    lastname = models.CharField(max_length=100)
+    new_structure = models.CharField(max_length=100)
+    address_structure = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
+
+
+class EditStructureForm(ModelForm):
     class Meta:
         model = Structure
-        fields = ('permission', 'is_active')
-        widgets={
-            'permission': forms.CheckboxSelectMultiple(attrs={'class':''})
-        }
+        fields = ('name', 'permission','franchise', 'address', 'description', 'is_active')

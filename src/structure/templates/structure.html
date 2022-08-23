@@ -24,7 +24,6 @@
 
 <!--------------  Accounts  ----------------->
 
-<h3>Compte</h3>
 
 <div class="details">
 
@@ -33,6 +32,7 @@
   </div>
 
   <div>
+    <div></div>
     <p>Franchise : {{ structures.franchise }}</p>
     <p>Adresse : {{ structures.address }}</p>
   </div>
@@ -42,12 +42,13 @@
     <p>Contact : {{ structures.franchise.manager.email }}</p>
   </div>
   <div>
-    <p>Gérand de la structure : {{ structures.structure.manager.first_name }} {{ structures.manager.last_name }}</p>
+    <p>Gérand de la structure : {{ structures.manager.first_name }} {{ structures.manager.last_name }}</p>
     <p>Contact : {{ structures.manager.email }}</p>
   </div>
   
 </div>
 
+<button type="button"><a href="{% url 'edit_structure' structures.id %}"><img src="">Modifier</a></button>
 
 
 <!--------------  Description  ----------------->
@@ -57,42 +58,64 @@
 
 
 
-<!--------------  Permission  ----------------->
+<!--------------  Permissions actives ----------------->
 <h3><img src="{% static 'icons/menu/permissions.png' %}">Permissions</h3>
-
+<h4>Activé</h4>
 
 <div class="containers_permission">
   
-  {% for structureperm in structureperms %}
-    {% for perm in structureperm.permission.all %}
+  {% for structure in structure %}
+  {% for perm in structure.permission.all %}
+  <div class="single_permission">
+    <img src='{{ perm.icon.url }}' alt="{{ perm }}">
+    <p>{{ perm }}</p>
     
-      <div class="single_permission">
+    <div class="True">
+      <input type="checkbox" id="{{ perm }}" class="checked">
+      <label for="{{ perm }}" class="label"></label>
+    </div>
+    
+  </div>
+  {% endfor %}
+  {% endfor %}
+</div>
 
-        <img src="{{ perm.icon.url }}" alt="icon">
-        <p class="permissions"> {{ perm }} {{ perm.is_active }}</p>
-        
-        <div>
-          <input type="checkbox" id="{{ perm }}" class="checkbox">
-          <label for="{{ perm }}" class="label"></label>
-        </div>
-        
-      </div> 
-        
-        {% endfor %}  
-  {% endfor %}  
-</div>  
+
+
+<!--------------  All Permissions ----------------->
+
+<h4>Toutes les permissions disponibles</h4>
+
+<div class="containers_permission">
   
-
   
-  <!--------------  Update Formulaire  ----------------->
-
-
-
-  <p>{% include 'formulaires/update_permissions.html' %}</p>
+  {% for permission in permission %}
+  
+  <div class="single_permission">
+    <img src='{{ permission.icon.url }}' alt="{{ permission }}">
+    <p>{{ permission }}</p>
     
+  </div>
+  
+  {% endfor %}
+  
+</div>
 
-  <button type="button"><a href="{% url 'delete_structure' structures.id %}"><img src="">Supprimer</a></button>
-    
+<!--------------  Buttons ----------------->
+
+<div class="btn-update">
+  <p>Un mail automatique sera envoyé au franchisé en cas de modification des permissions</p>
+  <button type="button"><a href="{% url 'update_permission' structures.id %}"><img src="">Modifier</a></button>
+</div>
+
+<div class="btn-delete">
+  <button type="button"><a href="{% url 'delete_structure' structures.id %}">Supprimer</a><img src="{% static 'icons/menu/delete.png' %}"></button>
+</div>
+
+
+
+
+
 
 
 {% endblock %}

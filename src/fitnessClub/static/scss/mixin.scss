@@ -30,3 +30,55 @@
 $turquoise : #00ACC1;
 $blackdark:#171717;
 $blacklight:#292929;
+
+
+
+// Toggles
+
+@mixin label{
+  display: inline-block;
+  width: 40px;
+  height: 23px;
+  background:gray;
+  position: relative;
+
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+// .checkbox{
+  //   display: none;
+//   &:checked + label:after{
+//     transform: translateX(15px);
+//   }
+//   &:checked + label{
+//     background: #00ACC1;
+//   }
+// }
+// .label{
+//   display: inline-block;
+//   width: 40px;
+//   height: 23px;
+//   background:gray;
+//   position: relative;
+//   transition: all .3s;
+//   border-radius: 20px;
+//   cursor: pointer;
+  
+//   &:after{
+//     content: "";
+//     height: 16px;
+//     width: 16px;
+//     background: rgb(255, 255, 255);
+//     position: absolute;
+//     top: 2.75px;
+//     left: 5px;
+//     transition: all .3s;
+//     border-radius: 50%;
+//   }
+// }

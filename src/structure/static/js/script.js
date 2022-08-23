@@ -1,4 +1,11 @@
-const mailling = document.getElementById("mailling-data");
-const checkbox = document.getElementsByClassName(".checkbox");
-const label = document.getElementsByClassName(".label");
 
+const edit_btn = document.getElementsByClassName(".edit-btn");
+const input = document.getElementsByClassName(".input-franchise");
+
+function editStructure(){
+  edit_btn.addEventListener('click', function(){
+    input.style.display="block";
+  })
+}
+
+editStructure()

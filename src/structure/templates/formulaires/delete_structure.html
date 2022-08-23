@@ -1,4 +1,8 @@
 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/delete_structure.css' %}">
+
 
 <!--------------  Message  ----------------->
 
@@ -7,12 +11,13 @@
 
 
 <!--------------  Form  ----------------->
-
-<form method="POST" action="{% url 'delete_structure' form.id %}">
-  {% csrf_token %}
-
-  <p>{{ form }}</p>
-
-  <button type="submit">Supprimer</button>
-</form>
+<div>
+  <form method="POST" action="{% url 'delete_structure' form.id %}" class="container-structures">
+    {% csrf_token %}
+    <p>Êtes-vous sûr de vouloir supprimmer la Structure {{ structure.name|title }} ?</p>
+    <p>{{ form }}</p>
+  
+    <button type="submit">Supprimer</button>
+  </form>
+</div>
   

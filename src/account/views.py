@@ -13,19 +13,49 @@ from . import forms
 
 
 
+#--------------* Verification mail *--------------#
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail, EmailMessage
+from fitnessClub import settings
+
+
 
 #--------------* Views allowed for staff *--------------#
 
 #--------------* ADD USER *--------------#
 
 def add_User(request):
-    formsignup = forms.SignupForm()
+    form = forms.SignupForm()
     if request.method == 'POST':
-        formsignup = forms.SignupForm(request.POST)
-        if formsignup.is_valid():
-            user = formsignup.save()
-            messages.success(request, "Un nouveau profile vient d'être créé.")
-    return render(request, 'ajouter.html', context={'formsignup': formsignup})
+        form = forms.SignupForm(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            number = form.cleaned_data['number']
+            email = form.cleaned_data['email']
+            is_staff = form.cleaned_data['is_staff']
+            user = form.save()
+
+            # User Activation
+            current_site = get_current_site(request)
+            mail_subject = 'Veuillez activer votre compte'
+            template = render_to_string('account_verification_email.html', {
+                'user': user,
+                'domain': current_site,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': default_token_generator.make_token(user),
+            })
+            to_email=email
+            send_email= EmailMessage(mail_subject,template,settings.EMAIL_HOST_USER,[to_email])
+            send_email.send()
+            messages.success(request, "Un nouveau profile vient d'être créé. Un mail vient de lui être env")
+            return redirect("/login/?command=verification&email="+email)  
+
+    return render(request, 'ajouter.html', context={'form': form})
 
 
 
@@ -65,3 +95,20 @@ def account(request):
     structures = Structure.objects.all()
     return render(request, 'account.html', context={'franchises': franchises, 'structures': structures, })
 
+
+def activate(request, uidb64, token):
+
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = User._default_manager.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        user.is_active = True
+        user.save()
+        messages.success(request, 'Congratulations! Your account is activated.')
+        return redirect('login')
+    else:
+        messages.error(request, 'Invalid activation link')
+        return redirect('login')
