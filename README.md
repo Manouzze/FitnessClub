@@ -9,3 +9,5 @@ Celui-ci est destiné au staff de la marque afin de gérer les différentes fran
 - Envoyé de Email, lien activation.
 - Base de donnée postgresql 
 - Déployement sur PythonAnywhere
+
+👉 https://manouzee.pythonanywhere.com/
