@@ -92,12 +92,17 @@ def logoutUser(request):
 def account(request):
     current_user = request.user
     franchises = Franchise.objects.filter(manager=current_user)
-    structures = Structure.objects.all()
+    structures = Structure.objects.filter(manager=current_user)
     return render(request, 'account.html', context={'franchises': franchises, 'structures': structures, })
 
 
-def activate(request, uidb64, token):
 
+
+
+
+#--------------* Activer *--------------#
+
+def activate(request, uidb64, token):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
         user = User._default_manager.get(pk=uid)

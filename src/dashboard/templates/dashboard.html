@@ -10,100 +10,115 @@
 <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 
 
+<!--------------  jquery  ----------------->
+<script src=  
+"https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
+    </script>  
+    
+    <script src=  
+"https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
+    </script>  
+    
+    <link href=  
+"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css" /> 
+<!--------------  Search  ----------------->
 
-    <!--------------  Search  ----------------->
+<form method="POST" id="search" action="{% url 'search' %}" autocomplete="off">
+  {% csrf_token %}
+  <input type="text" placeholder="Recherche partenaires ou salles" class="search" id="tags" name="search">
+</form>
+<div id='results-box' class="results-card not-visible"></div>
+
+
+    
+    <!--------------  Javascript  ----------------->
+    
+    <script>
+      $( function() {
+        let availableTags = [
+            {% for search in search_structure %}
+                "{{search.name}}",
+            {% endfor %}
+        ];
+        
+        $( "#tags" ).autocomplete({
+          source: availableTags
+        });
+      } );
+    </script>
+
+<!--------------  GLOBAL  ----------------->
+
+<div class="container-general">
+
   
-  <form method="GET" action="{% url 'search' %}">
-    <div class="search-bar">
-      <input type="text" placeholder="Recherche partenaires ou salles" class="search" name="search">
-      <button type="submit"><img src="{% static 'icons/menu/search.png' %}"></img></button>
+  
+  <!-----------  BLOCK Counter  -------------->
+  <div class="block-container-structures">
+
+    <div class="container-structures" id="salle">
+      <p>{{ structures }}</p>
+      <p>Salles</p>
     </div>
-  </form>
-  
-                   <!--------------  GLOBAL  ----------------->
-  <div class="container-global">
-    
-    
-    <!--------------  Block Lelf  ----------------->
-
-
-    <!-----------  Counter  -------------->
-
-    <div class="container-left">
-      
-      <div class="block-container-structures">
-
-        <div class="container-structures" id="salle">
-          <p>{{ structures }}</p>
-          <p>Salles</p>
-        </div>
-        <div class="container-structures" id="franchise">
-          <p>{{ franchises }}</p>
-          <p>Franchises</p>
-        </div>
+    <div class="container-structures" id="franchise">
+      <p>{{ franchises }}</p>
+      <p>Franchises</p>
+    </div>
         <div class="container-structures" id="manager">
           <p>{{ users }}</p>
           <p>Partenaires</p>
         </div>
       </div>
-      <!-----------  Add all  -------------->
-
-      <div id="add_franchise" class="container-structures">
-        <p>Ajouter une nouvelle Franchise</p>
-        <div>
-          <button type="button"><a href="{% url 'add_Franchise' %}">Voir plus</a></button>
+      
+      <!-----------  Formulaires  -------------->
+      
+      <div class="block-forms-description">
+        
+        <div class="description">
+          <p>Lorem ipsum</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat pulvinar tristique. Vivamus accumsan lacus et consequat fringilla. Donec quis lobortis ex, id laoreet nisl. Quisque eget turpis convallis mauris luctus fermentum vel sed nibh. Integer eget consequat odio. Mauris eget pharetra metus. Cras lorem nunc, commodo quis sapien sed, pulvinar placerat dolor. Aliquam in vehicula enim.</p>
         </div>
-      </div>
-
-      <div id="add_structure" class="container-structures">
-        <p>Ajouter une nouvelle Structure</p>
-        <a href="{% url 'create_structure' %}"><img src="{% static 'icons/structure/1.png' %}" alt="ajouter une salle"></a>
-        <div>
-          <button type="button"><a href="{% url 'create_structure' %}">Voir plus</a></button>
+        <div class="container-block-forms">
+          
+          <div class="block-forms">
+            
+            <div id="add_franchise" class="container-structures">
+              <p>Créer une nouvelle Franchise</p>
+              <a href="{% url 'add_Franchise' %}"><img src="{% static 'icons/franchise.png' %}" alt="ajouter une franchise"></a>
+              <div>
+                <button type="button"><a href="{% url 'add_Franchise' %}">Créer</a></button>
+              </div>
+            </div>
+            
+            <div id="add_structure" class="container-structures">
+              <p>Créer une nouvelle Structure</p>
+              <a href="{% url 'create_structure' %}"><img src="{% static 'icons/structure/1.png' %}" alt="ajouter une salle"></a>
+              <div>
+                <button type="button"><a href="{% url 'create_structure' %}">Créer</a></button>
+              </div>
+            </div>
+            
+            <div id="add_user" class="container-structures">
+              <p>Créer un Utilisateur</p>
+              <div>
+                <button type="button"><a href="{% url 'add_User' %}">Créer</a></button>
+              </div>
+            </div>
+            <div id="add_permission" class="container-structures">
+              <p>Créer une nouvelle permission</p>
+              <div>
+                <button type="button"><a href="{% url 'add_Permission' %}">Créer</a></button>
+              </div>
+            </div>
+          </div>
         </div>
+      
       </div>
-
-      <div id="add_user" class="container-structures">
-        <p>Ajouter un nouveau User</p>
-        <div>
-          <button type="button"><a href="{% url 'add_User' %}">Voir plus</a></button>
-        </div>
-      </div>
-      <div id="add_permission" class="container-structures">
-        <p>Ajouter unu nouvelle permission</p>
-        <div>
-          <button type="button"><a href="{% url 'add_Permission' %}">Voir plus</a></button>
-        </div>
-      </div>
-  </div>
-  
-  
-  <!--------------  Block Right  ----------------->
-  <div class="container-right">
-    <div class="container-structures" id="current_action">
-      <p>40</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
-      <p>Partenaires</p>
+      
     </div>
-
-  </div>
-
-</div>
+    
+    
 
 
 {% endblock %}

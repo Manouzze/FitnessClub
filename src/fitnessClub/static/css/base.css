@@ -8,15 +8,15 @@ body {
 }
 
 .name_account, h3 {
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 }
 
 .container_global {
   display: flex;
-  min-height: 1200px;
+  min-height: 1100px;
 }
 .container_global .sidebar {
-  width: 20%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,6 +27,7 @@ body {
   font-size: 20px;
   margin-top: 80px;
   letter-spacing: 3px;
+  text-align: center;
 }
 .container_global .sidebar a {
   display: flex;
@@ -58,6 +59,7 @@ body {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 .container_global .sidebar .menu .single-link {
   display: flex;
@@ -85,11 +87,75 @@ body {
 }
 .container_global .container_content {
   padding: 0 100px;
-  width: 80%;
+  width: 85%;
   background-color: #292929;
   background-image: url(../images/medal-gold.svg);
   background-repeat: no-repeat;
   background-position: right top;
+}
+
+/* //MEDIA QUERIES/ */
+@media screen and (max-width: 800px) {
+  .menu .single-link a svg {
+    width: 25px;
+  }
+  .menu .single-link a p {
+    display: none;
+  }
+  .sidebar a p {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 375px) {
+  body {
+    font-size: 10px;
+  }
+  body .container_global {
+    min-height: 600px;
+  }
+  body .container_global .sidebar {
+    width: 10%;
+    padding: 5px;
+  }
+  body .container_global .sidebar .logo p {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  body .container_global .sidebar .profil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    height: 35px;
+    width: 35px;
+  }
+  body .container_global .sidebar .profil .background-avatar img {
+    max-width: 30px;
+  }
+  body .container_global .sidebar a p {
+    font-size: 7px;
+    margin-top: 0px;
+  }
+  body .container_global .sidebar .menu .single-link .cube {
+    width: 7%;
+  }
+  body .container_global .sidebar .menu .single-link a {
+    width: 100%;
+  }
+  body .container_global .sidebar .menu .single-link a svg {
+    width: 18px;
+    margin: 8px;
+  }
+  body .container_global .container_content {
+    padding: 20px;
+    width: 80%;
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
 }
 
 /*# sourceMappingURL=base.css.map */

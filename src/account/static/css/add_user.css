@@ -10,98 +10,76 @@ button a {
   text-decoration: none;
 }
 
-h3 {
+.description {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.526);
   text-align: center;
-  margin-top: 80px;
-  margin-bottom: 60px;
 }
 
-.description p {
-  color: rgba(255, 255, 255, 0.655);
-  font-style: italic;
-  margin-bottom: 20px;
+.container-global {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  margin: 100px 0px;
 }
 
 .formulaire {
-  box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 0.25);
-  border-radius: 17px;
+  border-radius: 3px;
   margin: 45px;
   padding: 60px;
+  min-width: 700px;
+}
+.formulaire .container-background {
+  margin-right: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formulaire .container-background h3 {
+  margin: 60px 20px;
+  font-weight: 400;
 }
 .formulaire .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.formulaire .container .container-background {
-  margin-right: 90px;
-}
-.formulaire .container .container-background .background {
-  max-width: 200px;
-}
-
-form {
+.formulaire .container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-form label {
+.formulaire .container form label {
   color: rgba(255, 255, 255, 0.82);
   font-style: italic;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   margin-top: 20px;
   margin: 10px;
 }
-form input {
+.formulaire .container form input, .formulaire .container form textarea, .formulaire .container form select {
   min-width: 300px;
   min-height: 30px;
   background: #171717;
   border: 1px solid #000000;
-  border-radius: 15px;
+  border-radius: 3px;
   color: rgba(255, 255, 255, 0.657);
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-style: italic;
 }
-form span {
+.formulaire .container form span {
   color: rgba(255, 255, 255, 0.24);
   font-style: italic;
 }
-form button {
+.formulaire .container form button {
+  width: 100%;
   margin-top: 20px;
   color: white;
-}
-
-input[type=checkbox]:checked + label[for=id_is_staff]:after {
-  transform: translateX(15px);
-}
-
-input[type=checkbox]:checked + label[for=id_is_staff] {
-  background: #00ACC1;
-}
-
-label[for=id_is_staff], label[for=id_is_active] {
-  margin-left: 20px;
-  display: inline-block;
-  width: 40px;
-  height: 23px;
-  background: gray;
-  position: relative;
-  transition: all 0.3s;
-  border-radius: 20px;
-  cursor: pointer;
-}
-label[for=id_is_staff]:after, label[for=id_is_active]:after {
-  content: "";
-  height: 16px;
-  width: 16px;
-  background: rgb(255, 255, 255);
-  position: absolute;
-  top: 2.75px;
-  left: 5px;
-  transition: all 0.3s;
-  border-radius: 50%;
 }
 
 /*# sourceMappingURL=add_user.css.map */

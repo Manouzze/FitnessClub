@@ -10,9 +10,6 @@
 <link rel="stylesheet" href="{% static 'css/structure.css' %}">
 
 
-<!--------------  Javascript  ----------------->
-
-<script src="{% static 'js/script.js' %}"></script>
 
 <!--------------  Title  ----------------->
 
@@ -47,9 +44,12 @@
   </div>
   
 </div>
-
-<button type="button"><a href="{% url 'edit_structure' structures.id %}"><img src="">Modifier</a></button>
-
+{% if request.user.is_staff %} 
+<!--------------  Edit structure detail  ----------------->
+<div class="edit-structure-detail">
+  <button type="button" ><a  href="{% url 'edit_structure' structures.id %}"><img src="">Modifier</a></button>
+</div>
+{% endif %}
 
 <!--------------  Description  ----------------->
 <div class="description_account">
@@ -101,19 +101,31 @@
   
 </div>
 
+
 <!--------------  Buttons ----------------->
 
+
+<!--------------  Buttons Edit for staff ----------------->
+{% if request.user.is_staff %} 
 <div class="btn-update">
   <p>Un mail automatique sera envoyé au franchisé en cas de modification des permissions</p>
   <button type="button"><a href="{% url 'update_permission' structures.id %}"><img src="">Modifier</a></button>
 </div>
 
+<!--------------  Buttons Delete for staff ----------------->
+
 <div class="btn-delete">
   <button type="button"><a href="{% url 'delete_structure' structures.id %}">Supprimer</a><img src="{% static 'icons/menu/delete.png' %}"></button>
 </div>
+{% endif %}
 
 
-
+<!--------------  Info for manager structure ----------------->
+{% if not request.user.is_staff %} 
+<div class="btn-update">
+  <p>Si vous désiez plus d'informations en ce qui concerne les permissions, contacter à l'équipe de FitnessClub</p><br>
+</div>
+{% endif %}
 
 
 

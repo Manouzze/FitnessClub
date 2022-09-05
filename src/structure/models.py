@@ -1,3 +1,4 @@
+from email.policy import default
 from django.urls import reverse
 from django.db import models
 from account.models import User
@@ -6,8 +7,7 @@ from franchise.models import Franchise
 from permission.models import Permission
 
 
-
-
+    
 
 class Structure(models.Model):
     name = models.CharField(max_length=20)
@@ -17,7 +17,7 @@ class Structure(models.Model):
     slug = models.SlugField(max_length=20)
     address = models.TextField(max_length=100)
     description = models.TextField(max_length=500)
-    image = models.ImageField(upload_to="icons/structures", null=True)
+    image = models.ImageField(upload_to="icons/structures", null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

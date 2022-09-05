@@ -18,9 +18,8 @@
   <p class="name-franchise">Franchise {{ franchises.name }}</p>
 </div>
 
+
 <!--------------  Descritpion  ----------------->
-
-
 <div class="details_account">
   <div class="details">
     <p>Id : {{ franchises.manager.number }}</p>
@@ -32,18 +31,30 @@
   </div>
  
 </div>
+{% if request.user.is_staff %} 
+<!--------------  Edit franchise detail  ----------------->
+<button type="button"><a href="{% url 'edit_franchise' franchises.id %}"><img src="">Modifier</a></button>
+{% endif %}
+
 <!--------------  Description  ----------------->
 <div class="description_account">
   {{ franchises.description }}
 </div>
   
+ 
+  {% if request.user.is_staff %} 
   <!--------------  Add structure  ----------------->
   <div class="add-structure">
     <a href="{% url 'create_structure' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une structure</a>
   </div>
-  
+  {% endif %}
+
+
+
+
 <!--------------  Structure  ----------------->
 {% if request.user %}
+<p class="title-structure">Structures</p>
   {% for structure in structures %}
 
   <div class="container-structures">
@@ -52,11 +63,11 @@
     </div>
     <div>
       
-      <p>Structure : {{ structure.name }}</p>
-      <p>Gérand : {{ structure.manager.first_name }} {{ structure.manager.last_name }}</p>
+      <p><span>Structure :</span> {{ structure.name }}</p>
+      <p><span>Gérand :</span> {{ structure.manager.first_name }} {{ structure.manager.last_name }}</p>
     </div>
     <div>
-      <p>Adresse : {{ structure.address }}</p>
+      <p><span>Adresse :</span> {{ structure.address }}</p>
       <p>{{ structure.franchise.manager.email }}</p>
     </div>
     

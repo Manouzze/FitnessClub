@@ -1,3 +1,9 @@
+//COLORS
+$turquoise : #00ACC1;
+$blackdark:#171717;
+$blacklight:#292929;
+
+
 @mixin flex-center {
   display: flex;
   flex-direction: column;
@@ -16,6 +22,11 @@
     }
 }
 
+@mixin opacity-italic {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.526);
+}
+
 @mixin list-container {
   display: flex;
   justify-content: space-evenly;
@@ -26,27 +37,39 @@
   margin-bottom: 30px;
 }
 
-//COLORS
-$turquoise : #00ACC1;
-$blackdark:#171717;
-$blacklight:#292929;
-
-
-
-// Toggles
-
-@mixin label{
-  display: inline-block;
-  width: 40px;
-  height: 23px;
-  background:gray;
-  position: relative;
-
-  border-radius: 20px;
+@mixin media-list-container-375 {
+  a{
+    img{
+      width: 40px;
+    }
+  }
+  div{
+    width: 150px;
+    img{
+      width:30px;
+    }
+    p{
+      font-size: 9px;
+      margin: 4px 0px;
+    }
+  }
+  min-height: 100px;
+  padding : 10px;
+  max-width: 250px;
 }
 
-
-
+@mixin button-375 {
+  font-size: 9px;
+  width: 68px;
+  height: 30px;
+  background: $blackdark;
+  border: none;
+  border-radius: 9px;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
 
 
 

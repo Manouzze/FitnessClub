@@ -6,3 +6,8 @@ class AddFranchiseForm(ModelForm):
     class Meta:
         model = Franchise
         fields = ('name', 'manager', 'description', 'is_active' )
+
+class EditFranchiseForm(ModelForm):
+    class Meta:
+        model = Franchise
+        fields = ('name', 'manager', 'description', 'is_active' )

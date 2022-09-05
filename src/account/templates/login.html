@@ -56,11 +56,9 @@
 
   <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
-    <!-- {{ form.as_p }} -->
+   {{ form.as_p }}
 
-    <input type="email" id="email" name="email" placeholder="Email"  > 
-    <input type="password"  id="password" name="password" placeholder="Mot de passe" >
-    <input class="submit" type="submit" value="Se connecter">
+      <button type="submit">Se connecter</button>
   </form>
 
  

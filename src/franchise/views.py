@@ -1,7 +1,7 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from franchise.models import Franchise
 from structure.models import Structure
-from franchise.forms import AddFranchiseForm
+from franchise.forms import AddFranchiseForm, EditFranchiseForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import auth, messages
 
@@ -34,4 +34,16 @@ def add_Franchise(request):
             franchise = form.save()
             messages.success(request, "Une nouvelle franchise vient d'être créé.")
     return render(request, 'add_franchise.html', context={'form': form})
+
+# --------------* Edit Franchise *--------------#
+
+def edit_franchise(request,id):
+    franchise = Franchise.objects.get(id=id)
+    form = EditFranchiseForm(instance=franchise)
+    if request.method =='POST':
+        form = EditFranchiseForm(request.POST, instance=franchise)
+        if form.is_valid():
+            form.save()
+            return redirect('list_franchise')
+    return render(request, 'edit_franchise.html', context={'form': form, 'franchise':franchise})
 

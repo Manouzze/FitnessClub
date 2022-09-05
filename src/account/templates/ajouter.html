@@ -5,15 +5,17 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css/add_user.css' %}">
+<link rel="stylesheet" href="{% static 'css/formulaire.css' %}">
+
+<div class="container-global">
+  <!--------------  Title  ----------------->
+  <div class="name_account">
+    <h3>Ajouter un Utilisateur</h3>
+  </div>
+
+  <!--------------  Description  ----------------->
 
 
-<!--------------  Title  ----------------->
-<div class="name_account">
-  <h3>Ajouter un Utilisateur</h3>
-</div>
-
-<!--------------  Description  ----------------->
 
     <div class="description">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -21,29 +23,23 @@
         Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
         Vivamus euismod, ligula at blandit ultricies, dui diam tristique leo, ac tristique nisi est in metus.
         Integer in enim vel turpis rutrum molestie. Maecenas in erat ut eros facilisis elementum ac nec purus.
-        Vivamus quis semper magna. Aenean finibus massa magna, id bibendum nulla sollicitudin non. 
-        In nec metus id arcu mollis sollicitudin. Aliquam ex risus, suscipit et neque euismod,
-        pretium aliquet sapien. Suspendisse vestibulum velit sed lacus posuere, sed aliquam mauris facilisis.
       </p>
     </div>
       
-<!--------------  Message  ----------------->
-{% include 'alerts.html' %}
 
-<!--------------  Formulaire user  ----------------->
-<div class="formulaire">
-  <h3>Formulaire</h3>
-  <div class="container">
-    <div class="container-background">
-      <img src="{% static 'icons/formulaire/form_user.png' %}" class="background" alt="background">
+  <!--------------  Message  ----------------->
+  {% include 'alerts.html' %}
+
+  <!--------------  Formulaire user  ----------------->
+  <div class="formulaire">
+    <div class="container">
+      <form method="POST" action="{% url 'add_User' %}">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" >S’inscrire</button>
+      </form>
     </div>
-    <form method="POST" action="{% url 'add_User' %}">
-      {% csrf_token %}
-      {{ form }}
-      <button type="submit" >S’inscrire</button>
-    </form>
   </div>
 </div>
-
 
 {% endblock %}
