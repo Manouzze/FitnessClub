@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from dashboard.views import dashboard, search
 from franchise.views import list_franchise
-from account.views import account, activate
+from account.views import account, activate, loginUser
 from franchise.views import franchise
 from permission.views import update_permission
 from permission.views import add_Permission
@@ -30,7 +30,7 @@ from permission.views import add_Permission
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-
+    path('', loginUser, name='login'),
     path('account/', include("account.urls")),
     path('franchise/', include("franchise.urls")),
     path('structure/', include("structure.urls")),

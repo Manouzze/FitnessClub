@@ -33,9 +33,12 @@
   <!--------------  Formulaire user  ----------------->
   <div class="formulaire">
     <div class="container">
-      <form method="POST" action="{% url 'add_User' %}">
+
+      <form method="POST" action="{% url 'add_User' %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
+        {{ form.media }}
+
         <button type="submit" >S’inscrire</button>
       </form>
     </div>

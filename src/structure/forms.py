@@ -9,7 +9,8 @@ from django import forms
 class AddStructureForm(ModelForm):
     class Meta:
         model = Structure
-        fields = ('name', 'permission','franchise', 'manager', 'address', 'description', 'is_active')
+        fields = ('name', 'permission','franchise', 'manager', 'address', 'description', 'is_active', 'image')
+
 
 
 

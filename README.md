@@ -7,7 +7,9 @@ Celui-ci est destiné au staff de la marque afin de gérer les différentes fran
 - Gestions des rôles (admin, staff, franchisé, gérant de structure)
 - Gestion des permissions
 - Envoyé de Email, lien activation.
+
 - Base de donnée MySQL 
 - Déployement sur PythonAnywhere
 
 👉 https://manouzee.pythonanywhere.com/
+

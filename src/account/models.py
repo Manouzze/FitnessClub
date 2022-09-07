@@ -58,13 +58,13 @@ class User(AbstractBaseUser):
     email = models.EmailField(unique=True)  # require
     number = models.PositiveIntegerField(blank=True, null=True)
     # about
-    avatar = models.ImageField(upload_to="icons/avatar", null=True)
+    avatar = models.ImageField(upload_to="icons/avatar", null=True, blank=True)
     # Registration
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     # Permission
     is_active = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False, verbose_name="Équipe du Fitness Club")
     is_admin = models.BooleanField(default=False)
     # Main Field for authentication
     USERNAME_FIELD = 'email'
@@ -84,6 +84,7 @@ class User(AbstractBaseUser):
         if self.first_name:
             return f'{self.first_name}  {self.last_name}'
         return self.email.split('@')[0]
+    
         
     def has_perm(self, perm, obj=None):
         return True

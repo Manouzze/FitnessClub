@@ -34,10 +34,13 @@
     
     <div class="container">
     
-      <form method="POST" action="{% url 'add_Permission' %}">
-            {% csrf_token %}
-            {{ form }}
-            <button type="submit" >Créer</button>
+
+      <form method="POST" action="{% url 'add_Permission' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        {{ form.media }}
+        <button type="submit" >Créer</button>
+
       </form>
     </div>
   </div>

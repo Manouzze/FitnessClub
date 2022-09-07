@@ -54,7 +54,7 @@ def update_permission(request,id):
 def add_Permission(request):
     form = AddPermissionForm()
     if request.method == 'POST':
-        form = AddPermissionForm(request.POST)
+        form = AddPermissionForm(request.POST, request.FILES)
         if form.is_valid():
             permission = form.save()
             messages.success(request, "Une nouvelle permission vient d'être créé.")

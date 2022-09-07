@@ -10,7 +10,7 @@ from account.models import User
 class SignupForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = get_user_model()
-        fields = ('first_name', 'last_name', 'number', 'email', 'is_staff')
+        fields = ('first_name', 'last_name', 'role', 'number', 'email', 'is_staff', 'avatar')
 
 class LoginForm(forms.Form):
     email = forms.CharField(max_length=63, label='Email')

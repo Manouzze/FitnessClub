@@ -31,13 +31,14 @@ from fitnessClub import settings
 def add_User(request):
     form = forms.SignupForm()
     if request.method == 'POST':
-        form = forms.SignupForm(request.POST)
+        form = forms.SignupForm(request.POST, request.FILES)
         if form.is_valid():
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
             number = form.cleaned_data['number']
             email = form.cleaned_data['email']
             is_staff = form.cleaned_data['is_staff']
+            avatar = request.FILES['avatar']
             user = form.save()
 
             # User Activation
@@ -53,7 +54,6 @@ def add_User(request):
             send_email= EmailMessage(mail_subject,template,settings.EMAIL_HOST_USER,[to_email])
             send_email.send()
             messages.success(request, "Un nouveau profile vient d'être créé. Un mail vient de lui être env")
-            return redirect("/login/?command=verification&email="+email)  
 
     return render(request, 'ajouter.html', context={'form': form})
 

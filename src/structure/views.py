@@ -23,9 +23,8 @@ def structure(request, structure_slug):
 # --------------* LIST STRUCTURE *--------------#
 def list_structure(request):
     structures = Structure.objects.all()
-    franchises = Franchise.objects.filter(is_active=True)
+    franchises = Franchise.objects.all()
 
-    
     return render(request, 'list_structure.html', context={'structures': structures, 'franchises': franchises,})
 
 

@@ -41,6 +41,8 @@
 
             {% csrf_token %}
             {{ form }}
+            {{ form.media }}
+
             <button type="submit" >Créer</button>
       </form>
     </div>

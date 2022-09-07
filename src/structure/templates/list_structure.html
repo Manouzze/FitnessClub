@@ -21,7 +21,8 @@
   <div class="filter-franchise">
 {% for franchise in franchises %}
     <a href="{{ franchise.get_absolute_url }}">{{ franchise.name }}</a>
-{% endfor %}
+    {% endfor %}
+
   </div>
   
   <!--------------  Search  ----------------->

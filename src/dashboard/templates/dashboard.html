@@ -73,27 +73,26 @@
       
       <!-----------  Formulaires  -------------->
       
-      <div class="block-forms-description">
+
+      <div class="block-forms-description">git reset
         
-        <div class="description">
-          <p>Lorem ipsum</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat pulvinar tristique. Vivamus accumsan lacus et consequat fringilla. Donec quis lobortis ex, id laoreet nisl. Quisque eget turpis convallis mauris luctus fermentum vel sed nibh. Integer eget consequat odio. Mauris eget pharetra metus. Cras lorem nunc, commodo quis sapien sed, pulvinar placerat dolor. Aliquam in vehicula enim.</p>
-        </div>
+        
+        <p class="table-name">Formulaires</p>
         <div class="container-block-forms">
           
           <div class="block-forms">
             
             <div id="add_franchise" class="container-structures">
-              <p>Créer une nouvelle Franchise</p>
-              <a href="{% url 'add_Franchise' %}"><img src="{% static 'icons/franchise.png' %}" alt="ajouter une franchise"></a>
+              <p>Ajouter une Franchise</p>
+              <a href="{% url 'add_Franchise' %}"></a>
               <div>
                 <button type="button"><a href="{% url 'add_Franchise' %}">Créer</a></button>
               </div>
             </div>
             
             <div id="add_structure" class="container-structures">
-              <p>Créer une nouvelle Structure</p>
-              <a href="{% url 'create_structure' %}"><img src="{% static 'icons/structure/1.png' %}" alt="ajouter une salle"></a>
+              <p>Ajouter une Structure</p>
+              <a href="{% url 'create_structure' %}"></a>
               <div>
                 <button type="button"><a href="{% url 'create_structure' %}">Créer</a></button>
               </div>
@@ -101,12 +100,14 @@
             
             <div id="add_user" class="container-structures">
               <p>Créer un Utilisateur</p>
+
               <div>
                 <button type="button"><a href="{% url 'add_User' %}">Créer</a></button>
               </div>
             </div>
             <div id="add_permission" class="container-structures">
-              <p>Créer une nouvelle permission</p>
+              <p>Ajouter une permission</p>
+              <!-- <img src="{% static 'icons/menu/permissions.png' %}"> -->
               <div>
                 <button type="button"><a href="{% url 'add_Permission' %}">Créer</a></button>
               </div>
@@ -115,7 +116,48 @@
         </div>
       
       </div>
-      
+
+
+      <p class="table-name">Gérants des Franchises</p>
+      <div class="container-users">
+        {% for manager_franchise in manager_franchises %}
+        <div class="user" id="user">
+          <div class="container-img"><img src="{{ manager_franchise.manager.avatar.url }}" alt="avatar"></div>
+          {% if manager_franchise.is_active %}
+          <p>Actif</p>
+          {% else %}
+          <p>D2sqctif</p>
+          {% endif %}
+          <p>{{ manager_franchise }}</p>
+          <p>{{ manager_franchise.manager.first_name }} {{ manager_franchise.manager.last_name }}</p>
+          <p>{{ manager_franchise.manager.email }}</p>
+          <p>{{ manager_franchise.manager.role }}</p>
+          <p>{{ manager_franchise.franchise }}</p>
+          
+        </div>
+        {% endfor %}
+      </div>
+
+      <p class="table-name">Gérants des Structures</p>
+      <div class="container-users">
+        {% for manager_structure in manager_structures %}
+        <div class="user" id="user">
+          <div class="container-img"><img src="{{ manager_structure.manager.avatar.url }}" alt="avatar"></div>
+          {% if manager_structure.is_active %}
+          <p>Actif</p>
+          {% else %}
+          <p>D2sqctif</p>
+          {% endif %}
+          <p>{{ manager_structure }}</p>
+          <p>{{ manager_structure.manager.first_name }} {{ manager_structure.manager.last_name }}</p>
+          <p>{{ manager_structure.manager.email }}</p>
+          <p>{{ manager_structure.manager.role }}</p>
+          <p>{{ manager_structure.structure }}</p>
+
+        </div>
+      {% endfor %}
+      </div>
+
     </div>
     
     
