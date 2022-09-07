@@ -6,7 +6,7 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/update_permission.css' %}">
+<link rel="stylesheet" href="">
 
 
 
@@ -14,7 +14,7 @@
 
 <!--------------  Title  ----------------->
 <div class="name_account">
-  <h3>Créer une nouvelle structure</h3>
+  <h3>Modifier la franchise</h3>
 </div>
   
 <!--------------  Description  ----------------->
@@ -43,10 +43,10 @@
     <div class="container-background">
       <img src="{% static 'icons/formulaire/form_franchise.png' %}" class="background" alt="background">
     </div>
-    <form method="POST" action="{% url 'create_structure' %}">
+    <form method="POST" action="{% url 'edit_franchise' franchise.id %}">
           {% csrf_token %}
           {{ form }}
-          <button type="submit">Envoyé</button>
+          <button type="submit">Modifier</button>
     </form>
   </div>
 </div>

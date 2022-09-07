@@ -9,7 +9,7 @@ from django import forms
 class AddStructureForm(ModelForm):
     class Meta:
         model = Structure
-        fields = ('name', 'permission','franchise', 'address', 'description', 'is_active')
+        fields = ('name', 'permission','franchise', 'manager', 'address', 'description', 'is_active', 'image')
 
 
 
@@ -24,4 +24,4 @@ class StructureRequestManagerForm(forms.Form):
 class EditStructureForm(ModelForm):
     class Meta:
         model = Structure
-        fields = ('name', 'permission','franchise', 'address', 'description', 'is_active')
+        fields = ('name', 'permission','franchise', 'manager', 'address', 'description', 'is_active')

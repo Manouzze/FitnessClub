@@ -6,7 +6,10 @@
   border-radius: 17px;
   min-height: 140px;
   margin-bottom: 30px;
-  letter-spacing: 5px;
+  border-radius: 3px;
+}
+.container-structures p {
+  text-align: center;
 }
 
 .container-structures:hover {
@@ -25,76 +28,168 @@ button a {
   text-decoration: none;
 }
 
-.container-global {
-  display: flex;
-}
-
-.container-left {
-  width: 80%;
-}
-
-.container-right {
-  width: 20%;
-  height: 100%;
-}
-.container-right #current_action {
+.container-general {
   display: flex;
   flex-direction: column;
-  height: auto;
+  margin-top: 60px;
 }
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  margin: 50px 0px;
-}
-.search-bar .search {
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 2.5px;
-  font-style: italic;
-  width: 400px;
-  height: 40px;
-  border-radius: 10px;
-  border: solid white;
-  background-color: #171717;
-  color: rgba(255, 255, 255, 0.526);
-  border: solid 1px;
-}
-.search-bar button {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-left: -40px;
-}
-.search-bar button img {
-  width: 25px;
-}
-
-.block-container-structures {
+.container-general .block-container-structures {
   display: flex;
   justify-content: space-evenly;
 }
-
-#salle, #franchise, #manager {
-  box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 0.25);
+.container-general .block-container-structures #salle, .container-general .block-container-structures #franchise, .container-general .block-container-structures #manager {
+  margin-right: 20px;
+  box-shadow: 0px 0px 6px 4px rgba(54, 255, 209, 0.21);
   min-width: 300px;
-  min-height: 215px;
+  min-height: 115px;
   flex-direction: column;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
 }
-#salle p:first-child, #franchise p:first-child, #manager p:first-child {
+.container-general .block-container-structures #salle p:first-child, .container-general .block-container-structures #franchise p:first-child, .container-general .block-container-structures #manager p:first-child {
   font-size: 40px;
   margin-bottom: 0px;
 }
-#salle p:last-child, #franchise p:last-child, #manager p:last-child {
+.container-general .block-container-structures #salle p:last-child, .container-general .block-container-structures #franchise p:last-child, .container-general .block-container-structures #manager p:last-child {
   font-size: 20px;
 }
-
-#add_franchise, #add_structure {
+.container-general .block-forms-description {
+  display: flex;
   flex-direction: column;
-  max-width: 500px;
+  justify-content: center;
+  align-items: center;
+}
+.container-general .block-forms-description .container-block-forms {
+  margin-top: 50px;
+  width: 1050px;
+}
+.container-general .block-forms-description .container-block-forms .block-forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.container-general .block-forms-description .container-block-forms .block-forms #add_franchise, .container-general .block-forms-description .container-block-forms .block-forms #add_structure, .container-general .block-forms-description .container-block-forms .block-forms #add_user, .container-general .block-forms-description .container-block-forms .block-forms #add_permission {
+  flex-direction: column;
+  min-width: 300px;
+  margin-right: 20px;
+  letter-spacing: 4px;
+  padding: 5px;
+}
+
+.table-name {
+  font-size: 17px;
+  letter-spacing: 3px;
+  margin-top: 80px;
+}
+
+.table-name:first-child {
+  margin-bottom: 0px;
+}
+
+.container-users {
+  background-color: #171717;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.container-users .user {
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+}
+.container-users .user .container-img {
+  max-width: 50px;
+}
+.container-users .user .container-img img {
+  width: 100%;
+}
+
+.search:focus {
+  background-color: white;
+}
+
+.not-visible {
+  display: none;
+}
+
+.results-card {
+  width: 37%;
+  box-shadow: 0 0px 1px 1px rgba(104, 218, 188, 0.881);
+  transition: 0.5s;
+  border-radius: 7px;
+  padding: 15px 15px;
+}
+
+@media screen and (max-width: 375px) {
+  .search-bar {
+    display: none;
+  }
+  .container-general {
+    margin-top: 80px;
+  }
+  .container-general .block-container-structures #salle, .container-general .block-container-structures #franchise, .container-general .block-container-structures #manager {
+    min-width: 83px;
+    min-height: 55px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    letter-spacing: 2px;
+    padding: 2px;
+  }
+  .container-general .block-container-structures #salle p:first-child, .container-general .block-container-structures #franchise p:first-child, .container-general .block-container-structures #manager p:first-child {
+    font-size: 12px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  .container-general .block-container-structures #salle p:last-child, .container-general .block-container-structures #franchise p:last-child, .container-general .block-container-structures #manager p:last-child {
+    margin-top: 3px;
+    margin-bottom: 0px;
+    font-size: 10px;
+  }
+  .container-general .block-forms-description .description {
+    font-size: 9px;
+  }
+  .container-general .block-forms-description .description p:first-child {
+    font-size: 10px;
+  }
+  .container-general .block-forms-description .container-block-forms {
+    margin-top: 20px;
+    width: auto;
+  }
+  .container-general .block-forms-description .container-block-forms .block-forms {
+    flex-wrap: none;
+    flex-direction: column;
+  }
+  .container-general .block-forms-description .container-block-forms .block-forms #add_franchise, .container-general .block-forms-description .container-block-forms .block-forms #add_structure, .container-general .block-forms-description .container-block-forms .block-forms #add_user, .container-general .block-forms-description .container-block-forms .block-forms #add_permission {
+    min-width: 200px;
+    min-height: 80px;
+    border-radius: 6px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .container-general .block-forms-description .container-block-forms .block-forms #add_franchise p, .container-general .block-forms-description .container-block-forms .block-forms #add_structure p, .container-general .block-forms-description .container-block-forms .block-forms #add_user p, .container-general .block-forms-description .container-block-forms .block-forms #add_permission p {
+    letter-spacing: 2px;
+  }
+  .container-general .block-forms-description .container-block-forms .block-forms #add_franchise a img, .container-general .block-forms-description .container-block-forms .block-forms #add_structure a img, .container-general .block-forms-description .container-block-forms .block-forms #add_user a img, .container-general .block-forms-description .container-block-forms .block-forms #add_permission a img {
+    display: none;
+  }
+  button {
+    font-size: 9px;
+    width: 68px;
+    height: 30px;
+    background: #171717;
+    border: none;
+    border-radius: 9px;
+  }
+  button a {
+    color: white;
+    text-decoration: none;
+  }
+  .container_content {
+    margin-bottom: 50px;
+    background-position: right top;
+  }
 }
 
 /*# sourceMappingURL=dashboard.css.map */

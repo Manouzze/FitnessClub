@@ -48,18 +48,81 @@ h3 {
   margin-bottom: 30px;
 }
 
-.add-franchise {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: end;
-}
-.add-franchise a {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-.add-franchise a img {
-  margin-right: 8px;
+/* //MEDIA QUERIES/ */
+/* //MEDIA QUERIES --------> 375px/ */
+@media screen and (max-width: 375px) {
+  .name_account {
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 60px;
+  }
+  h3 {
+    font-size: 10px;
+    margin-top: 30px;
+    letter-spacing: 2px;
+  }
+  .details_account {
+    font-size: 9px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .details_account div p {
+    margin: 5px 0px;
+  }
+  .description_account {
+    font-size: 9px;
+    margin-top: 20px;
+  }
+  .container-structures {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    padding: 10px;
+    max-width: 250px;
+  }
+  .container-structures a img {
+    width: 40px;
+  }
+  .container-structures div {
+    width: 150px;
+  }
+  .container-structures div img {
+    display: none;
+  }
+  .container-structures div p {
+    font-size: 9px;
+    margin: 4px 0px;
+    text-align: center;
+  }
+  .container-structures .div-structure-img {
+    display: flex;
+    justify-content: center;
+  }
+  .container-structures div:last-child {
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    font-size: 9px;
+    width: 68px;
+    height: 30px;
+    background: #171717;
+    border: none;
+    border-radius: 9px;
+  }
+  button a {
+    color: white;
+    text-decoration: none;
+  }
+  .container_content {
+    margin-bottom: 50px;
+  }
 }
 
 /*# sourceMappingURL=account.css.map */

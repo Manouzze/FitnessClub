@@ -1,3 +1,15 @@
+
+@import '../../../fitnessClub/static/scss/mixin.scss';
+
+
+.container-structures{
+  @include list-container;
+}
+
+button{
+  @include button;
+}
+
 body{
   margin: 0px;
   font-family: 'Inter', sans-serif;
@@ -7,29 +19,7 @@ body{
 
 .contener_global{
 
-  nav{
-    font-family: 'Inter', sans-serif;
-    min-height: 140px;
-    display: flex;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    
-    .logo{
-      size: 24px;
-    }
 
-    .menu{
-      min-width: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      a{
-        text-decoration: none;
-        color: white;
-      }
-    }
-  }
 
 
   .contenu{
@@ -67,9 +57,9 @@ body{
 
     .block-connexion{
       margin-top: -150px;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-shadow: 0px 0px 34px rgba(255, 255, 255, 0.3);
-      color: #171717;
+      background-color: #292929;
+      box-shadow: 0px 0px 34px rgba(0, 0, 0, 0.3);
+      color: #ffffff;
       width: 430px;
       height: 445px;
       border-radius: 14px;
@@ -78,39 +68,41 @@ body{
       align-items: center;
       justify-content: center;
       text-align: center;
+      
+    .img-container{
+      filter: drop-shadow(0 0 0.9rem rgb(255, 138, 20));
+      img{
+        min-width: 80px;
+        margin: 10px;
+      }
+    }
+    p{
+      font-size: 20px;
+      margin: 0px;
+    }
       form{
-  
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-width: 350px;
         input{
           width: 60%;
-          margin-top: 20px;
+          margin: 10px;
           border-radius: 7px;
           height: 38px;
           border: none;
-    
+          text-align: center;
         }
-        input::placeholder {  
-          text-align: center; 
+        #id_email{
+          margin-bottom: 20px;
         }
-        .submit{
-          background-color: #171717;
-          color: white;
-        }
-        .img-container{
-          height: 100px;
-          background-image: url(../images/Ellipse_home.png) ;
-          background-repeat: no-repeat;
-          background-size: 100px;
-          background-position: center;
-          filter: drop-shadow(0 0 0.9rem rgb(255, 138, 20));
-          filter: border(1px rgba(255, 138, 20, 0.8));
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          img{
-            max-width: 71px;
-            
-          }
-        }
+       button{
+        margin: 20px;
+        color: #ffffff;
+       }
       }
     }
   }
@@ -119,14 +111,33 @@ body{
 }
 
 footer{
+  margin-top: 60px;
   background-color:#292929;
   width: auto;
-  min-height: 408px;
+  min-height: 350px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  
+  
+  .single-info{
+    margin: 0px 280px;
+    margin-top: 60px;
+    p{
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    ol{
+      list-style: none;
+      li{
+        margin: 15px;
+      }
+    }
+  }
   .icons_social{
-    margin-bottom: 30px;
+    margin-top: 120px;
     a{
       margin: 10px;
     }

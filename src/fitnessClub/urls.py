@@ -16,13 +16,13 @@ Including another URLconf
 import imp
 from django.contrib import admin
 from django.urls import include, path
-from structure.views import list_structure, search
+from structure.views import list_structure
 # from fitnessClub import settings
 from django.conf import settings
 from django.conf.urls.static import static
-from dashboard.views import dashboard
+from dashboard.views import dashboard, search
 from franchise.views import list_franchise
-from account.views import account, activate
+from account.views import account, activate, loginUser
 from franchise.views import franchise
 from permission.views import update_permission
 from permission.views import add_Permission
@@ -30,7 +30,7 @@ from permission.views import add_Permission
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-
+    path('', loginUser, name='login'),
     path('account/', include("account.urls")),
     path('franchise/', include("franchise.urls")),
     path('structure/', include("structure.urls")),
@@ -39,13 +39,13 @@ urlpatterns = [
     path('account/', account, name='account'),
     path('dashboard/', dashboard, name='dashboard'),
     path('update/<int:id>/', update_permission, name='update_permission' ),
+    path('search/', search, name='search'),
     path('franchise/<slug:franchise_slug>/', franchise, name='franchise'),
     path('activate/<uidb64>/<token>/', activate, name='activate'),
     
     path('franchise/', list_franchise, name='list_franchise'),
     path('structure/', list_structure, name='list_structure'),
 
-    path('search/', search, name='search'),
 
 
 

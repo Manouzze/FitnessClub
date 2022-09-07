@@ -9,6 +9,12 @@
   font-weight: bolder;
 }
 
+.title-structure {
+  letter-spacing: 3px;
+  font-style: bold;
+  font-size: 15px;
+}
+
 h3 {
   text-align: center;
   margin: 50px;
@@ -61,6 +67,89 @@ button {
 button a {
   color: white;
   text-decoration: none;
+}
+
+/* //MEDIA QUERIES/ */
+@media screen and (max-width: 980px) {
+  .container-structures {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+  .container-structures div p {
+    margin: 5px 0px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .container-structures {
+    font-size: 12px;
+    padding: 5px;
+  }
+  .container-structures div p span {
+    display: none;
+  }
+  button {
+    width: 89px;
+    height: 36px;
+  }
+}
+/* //MEDIA QUERIES --------> 375px/ */
+@media screen and (max-width: 375px) {
+  .name_account {
+    letter-spacing: 2px;
+  }
+  .name_account .name-franchise {
+    letter-spacing: 2px;
+    margin-top: 26px;
+    margin-bottom: 35px;
+  }
+  .details_account {
+    flex-direction: column;
+  }
+  .details_account .details p {
+    margin: 2px 0px;
+  }
+  .description_account {
+    margin: 20px 0px;
+    font-size: 9px;
+  }
+  .add-structure a img {
+    width: 16px;
+    margin-right: 3px;
+  }
+  .container-structures {
+    min-height: 100px;
+    padding: 10px;
+    max-width: 250px;
+  }
+  .container-structures a img {
+    width: 40px;
+  }
+  .container-structures div {
+    width: 150px;
+  }
+  .container-structures div img {
+    width: 30px;
+  }
+  .container-structures div p {
+    font-size: 9px;
+    margin: 4px 0px;
+  }
+  button {
+    font-size: 9px;
+    width: 68px;
+    height: 30px;
+    background: #171717;
+    border: none;
+    border-radius: 9px;
+  }
+  button a {
+    color: white;
+    text-decoration: none;
+  }
+  .container_content {
+    margin-bottom: 50px;
+  }
 }
 
 /*# sourceMappingURL=franchise.css.map */

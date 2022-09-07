@@ -10,6 +10,11 @@
     font-weight: bolder;
   }
 }
+.title-structure{
+  letter-spacing: 3px;
+  font-style: bold;
+  font-size: 15px;
+}
 h3{
   text-align: center;
   margin: 50px;
@@ -25,7 +30,6 @@ h3{
 .description_account{
   margin:60px 0px;
   line-height: 170%;
-  
 }
 .add-structure{
   margin-bottom: 20px;
@@ -47,4 +51,87 @@ h3{
 
 button{
   @include button;
+}
+
+/* //MEDIA QUERIES/ */
+
+@media screen and (max-width: 980px){
+.container-structures{
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  div{
+    p{
+      margin: 5px 0px;
+    }
+  }
+}
+}
+
+@media screen and (max-width: 800px){
+  .container-structures{
+    font-size: 12px;
+    padding: 5px;
+    div{
+      p{
+        span{
+          display: none;
+        }
+      }
+    }
+  }
+  button{
+    width: 89px;
+    height: 36px;
+    
+  }
+}
+
+
+
+
+/* //MEDIA QUERIES --------> 375px/ */
+
+@media screen and (max-width: 375px){
+  
+.name_account{
+  letter-spacing: 2px;
+  .name-franchise{
+    letter-spacing: 2px;
+    margin-top: 26px;
+    margin-bottom: 35px
+  }
+}
+
+.details_account{
+  flex-direction: column;
+  .details{
+    p{
+      margin: 2px 0px
+    }
+  }
+}
+.description_account{
+  margin:20px 0px;
+  font-size: 9px;
+}
+.add-structure{
+  a{
+    img{
+      width: 16px;
+      margin-right: 3px ;
+    }
+  }
+}
+.container-structures{
+  @include media-list-container-375;
+  
+}
+
+button{
+  @include button-375;
+}
+.container_content{
+  margin-bottom: 50px;
+}
 }

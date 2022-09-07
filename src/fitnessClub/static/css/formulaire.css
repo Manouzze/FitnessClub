@@ -1,0 +1,128 @@
+button {
+  width: 134px;
+  height: 48px;
+  background: #171717;
+  border: none;
+  border-radius: 9px;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+.description {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.526);
+  text-align: center;
+}
+
+.container-global {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  margin: 100px 0px;
+}
+
+.formulaire {
+  border-radius: 3px;
+  margin: 45px;
+  padding: 60px;
+  min-width: 700px;
+}
+.formulaire .container-background {
+  margin-right: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formulaire .container-background h3 {
+  margin: 60px 20px;
+  font-weight: 400;
+}
+.formulaire .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.formulaire .container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.formulaire .container form label {
+  color: rgba(255, 255, 255, 0.82);
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  margin: 10px;
+}
+.formulaire .container form input, .formulaire .container form textarea, .formulaire .container form select {
+  min-width: 300px;
+  min-height: 30px;
+  background: #171717;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.657);
+  text-align: center;
+  letter-spacing: 2px;
+  font-style: italic;
+}
+.formulaire .container form span {
+  color: rgba(255, 255, 255, 0.24);
+  font-style: italic;
+}
+.formulaire .container form button {
+  width: 100%;
+  margin-top: 20px;
+  color: white;
+}
+
+/* //MEDIA QUERIES/ */
+@media screen and (max-width: 375px) {
+  h3 {
+    margin: 0px;
+    margin-top: 100px;
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+  .description {
+    font-size: 9px;
+  }
+  .formulaire {
+    margin: 20px;
+    padding: 0px;
+    min-width: 200px;
+  }
+  .formulaire .container form input, .formulaire .container form textarea, .formulaire .container form select {
+    min-width: 220px;
+    min-height: 20px;
+  }
+  .formulaire .container form select {
+    font-size: 10px;
+  }
+  .formulaire .container form #id_franchise, .formulaire .container form #id_manager {
+    font-size: 12px;
+  }
+  .formulaire .container form textarea, .formulaire .container form #id_name {
+    font-size: 9px;
+  }
+  button {
+    font-size: 9px;
+    width: 68px;
+    height: 30px;
+    background: #171717;
+    border: none;
+    border-radius: 9px;
+  }
+  button a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/*# sourceMappingURL=formulaire.css.map */

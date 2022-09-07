@@ -7,12 +7,10 @@ class UpdatePermission(ModelForm):
     class Meta:
         model = Structure
         fields = ('permission', 'is_active')
-        widgets={
-            'permission': forms.CheckboxSelectMultiple(attrs={'class':''})
-        }
+
 
 
 class AddPermissionForm(ModelForm):
     class Meta:
         model = Permission
-        fields = ('name', 'is_active',)
+        fields = ('name', 'is_active','icon')

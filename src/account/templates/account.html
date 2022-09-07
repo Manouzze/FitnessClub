@@ -9,36 +9,39 @@
     <link rel="stylesheet" href="{% static 'css/account.css' %}">
 
 
-
+    <!--------------  TITLE  ----------------->
     <div class="name_account">
-
       {% if user.is_staff %}
         <p>Équipe de Fitness Club</p>
-
-      {% else %}
+      {% elif user.role == 'franchise manager' %}
         <p>Partenaire de Fitness Club</p>
-      {% endif %}
+      {% else %}
+        <p>Gérant de structure de Fitness Club</p>
 
+      {% endif %}
       <p>{{ user.first_name|title }} {{user.last_name|title}}</p>
     </div>
+
+
     <!--------------  Accounts  ----------------->
+
     <h3>Compte</h3>
-    
     <div class="details_account">
       <div>
         <p><p>{{ user.first_name|title }} {{user.last_name|title}}</p></p>
-        <p>Nombre de franchise :</p>
+        <p>Rôles : {{ user.role|title }}</p>
       </div>
       <div>
         <p>id : {{ user.number }}</p>
         <p>email : {{ user.email|title }}</p>
       </div>
       <div>
-        <p>reponsable : Robert Tevo</p>
-        <p>technical contact: Roberta Miam</p>
+        <p>Numéro : 06-98-78-52-64</p>
+        <p>Responsable: Roberta Miam</p>
       </div>
-    
     </div>
+
+
     <!--------------  Description  ----------------->
     <div class="description_account">
       Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -53,85 +56,77 @@
     </div>
 
 
-    <!--------------  Structures  ----------------->
+    <!--------------  Title Franchise  ----------------->
   {% if request.user.role == 'franchise manager' %}  
-    
-
     <h3>Les Franchise </h3>
-  
-  <!--------------  Add Franchise  ----------------->
-  <div class="add-franchise">
-    <a href="{% url 'add_Franchise' %}"><img src="{% static 'icons/menu/add_franchise.png' %}" alt="ajouter une salle">Ajouter une franchise</a>
-  </div>
-  
-    
+  {% endif %}
+
+
+  <!--------------  FRANCHISES  ----------------->
+  {% if request.user.role == 'franchise manager' %}
     {% for franchise in franchises %}
 
-    <!--------------  Structures  ----------------->
-
-    <div class="container-structures">
-    
-      <a href=""><img src="{% static 'icons/franchise.png' %}" alt="franchise"></a>
-      <div>
-        <p>Franchise : {{ franchise.name }}</p>
-        <p>Nombre de structure : </p>
-      </div>
+      <div class="container-structures">
       
-      <div>
-        <p>Gérant : {{ franchise.manager.first_name }} {{ franchise.manager.last_name }}</p>
-        <p>Contact : {{ franchise.manager.email }}</p>
-      </div>
-      
-      <div>
-        <p>Contact : {{ structure.manager.email }}</p>
-        {% if franchise.is_active %}
-          <p>Actif </p>
-        {% else %}
-          <p>désactif</p>
-        {% endif %}
-      </div>
-      <div>
-        <button type="button"><a href="{{ franchise.get_absolute_url }}">Voir plus</a></button>
-      </div>
-    
-    </div>
-
-  
-    
-    
-  {% if request.user.role == 'structure manager' %}
-    {% if structures %}
-
-    <!--------------  Structures  ----------------->
-    
-    <div class="container-structures">
-      <div>
-        <img src="{{ structures.avatar.url }}" alt="structures">
-      </div>
-      <div>
+        <a href=""><img src="{% static 'icons/franchise.png' %}" alt="franchise"></a>
+        <div>
+          <p>Franchise : {{ franchise.name }}</p>
+        </div>
         
-        <p>structure : {{ structures.name }}</p>
-        <p>User : {{ structures.franchise.user.first_name|title }}</p>
-      </div>
+        <div>
+          <p>Gérant : {{ franchise.manager.first_name }} {{ franchise.manager.last_name }}</p>
+        </div>
+        
+        <div>
+          {% if franchise.is_active %}
+            <p>Actif </p>
+          {% else %}
+            <p>désactif</p>
+          {% endif %}
+        </div>
+        <div>
+          <button type="button"><a href="{{ franchise.get_absolute_url }}">Voir plus</a></button>
+        </div>
       
-      <div>
-        <button type="button"><a href="{{ structures.get_absolute_url }}">Voir plus</a></button>
       </div>
-    </div>
-    
-    
-    
-    {% endif %}
-  {% endif %}
-      
     {% endfor %}
-    
-    <!--------------  Structures  ----------------->
-
-    
-
   {% endif %}
 
+
+    
+  <!--------------  STRUCTURES  ----------------->
+  {% if request.user.role == 'structure manager' %}
+  <h3>Les Structure</h3>
+      {% for structures in structures %}
+
+        <div class="container-structures">
+          <div class="div-structure-img">
+            <img src="{{ structures.image.url }}" alt="structures">
+          </div>
+         
+          <div class="div-info">
+            <p>Structure : {{ structures.name }}</p>
+            <p>Adresse : {{ structures.address }}</p>
+          </div>
+          <div class="div-info">
+            <p>Franchise de {{ structures.franchise.name }}</p>
+            <p>Gérant de la franchise: {{ structures.franchise.manager.first_name }} {{ structures.franchise.manager.last_name }}</p>
+          </div>
+          <div class="div-info">
+            <p>Contact : {{ structures.franchise.manager.email }}</p>
+          </div>
+          <div>
+            <button type="button"><a href="{{ structures.get_absolute_url }}">Voir plus</a></button>
+          </div>
+        </div>
+        
+      
+      
+      {% endfor %}
+  {% endif %}
+      
+  
+ 
 
 
 {% endblock %}

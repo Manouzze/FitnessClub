@@ -17,29 +17,17 @@
   <div class="contener_global">
 
     <!--------------  NAVIGATION  ----------------->
-    <nav>
-
-      <div class="logo">
-        <p>LAZY FITNESS</p>
-      </div>
-      
-      <div class="menu">
-        <a href="">Trouver une salle</a>
-        <a href="">Nos Programmes</a>
-        <a href="">Accompagnements</a>
-        <a href="">Contact</a>
-      </div>
-        
-    </nav>
+    
+  
     
     <!--------------  BLOC IMAGE  ----------------->
     
     <div class="contenu">
       
       <div class="text-img">
-        <p>lazy fitness</p>
-        <p>le sport</p>
-        <p>en douceur</p>
+        <p>rejoignez</p>
+        <p>Fitness Club</p>
+        <p></p>
       </div>
 
     </div>
@@ -47,27 +35,51 @@
     
     <!--------------  CONNEXION  ----------------->
 
-    <!--<div class="connexion">
-      <div class="block-connexion">-->
-        <div class="img-container">
-          <img src="../static/icons/zebra.svg" alt="animal">
-        </div>
-        <p>Connexion</p>
+  <div class="connexion">
 
-  <form method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
-    <!-- {{ form.as_p }} -->
-
-    <input type="email" id="email" name="email" placeholder="Email"  > 
-    <input type="password"  id="password" name="password" placeholder="Mot de passe" >
-    <input class="submit" type="submit" value="Se connecter">
-  </form>
-
+    <div class="block-connexion">
+       
+      <div class="img-container">
+        <img src="{% static 'images/login.png' %}" alt="animal">
+      </div>
+      <p>Connexion</p>
+      
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Se connecter</button>
+      </form>
+        
+    </div> 
+  </div>
  
 
 
   <!--------------  FOOTER  ----------------->
   <footer>
+    <div class="info-footer">
+    
+      <div class="single-info">
+        <p>SERVICE CLIENT</p>
+        <ol>
+          <li>Nous contacter</li>
+          <li>Tarifs</li>
+          <li>FAQ</li>
+        </ol>
+      </div>
+      <div class="single-info">
+        <p>INFORMATION PARTIQUES</p>
+        <ol>
+          <li>Trouver une salle</li>
+          <li>Mentions Légales</li>
+          <li>Protection des données</li>
+        </ol>
+      </div>
+    
+
+
+    </div>
+
     <div class="icons_social">
       <a href=""><img src="../static/icons/footer/facebook.png" alt="facebook"></a>
       <a href=""><img src="../static/icons/footer/instagram.png" alt="instagram"></a>

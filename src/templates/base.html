@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -39,39 +39,43 @@
 
       <div class="menu">
 
-      {% if request.user.is_staff %}
+        {% if request.user.is_staff %}
 
         <div class="single-link">
           <div class="cube"></div>
           <a href="{% url 'dashboard' %}">{% include 'svg/svg_dashboard.html' %}
-            Dashboard</a>
+            <p>Dashboard</p>
+          </a>
         </div>
         
         <div class="single-link">
           <div class="cube"></div>
           <a href="{% url 'list_franchise' %}">{% include 'svg/svg_list_franchise.html' %}
-            Liste des partenaires
+            <p>Partenaire</p>
           </a>
         </div>
         
         <div class="single-link">
           <div class="cube"></div>
           <a href="{% url 'list_structure' %}">{% include 'svg/svg_list_structure.html' %}
-            Liste des Structure</a>
+            <p>Structure</p>
+          </a>
         </div>
 
-      {% endif %}
+        {% endif %}
 
         <div class="single-link">
           <div class="cube"></div>
           <a href="{% url 'account' %}">{% include 'svg/svg_user_account.html' %}
-            Mon compte</a>
+            <p>Compte</p>
+          </a>
         </div>
         
         <div class="single-link">
           <div class="cube"></div>
           <a href="{% url 'logout' %}">{% include 'svg/svg_deco.html' %}
-            Déconnexion</a>
+            <p>Déconnexion</p>
+          </a>
         </div>
 
       </div>

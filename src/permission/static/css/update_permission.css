@@ -47,8 +47,6 @@ form label {
   margin: 10px;
 }
 form input, form textarea, form select {
-  min-width: 300px;
-  min-height: 30px;
   background: #171717;
   border: 1px solid #000000;
   border-radius: 15px;

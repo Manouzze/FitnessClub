@@ -25,8 +25,10 @@ def update_permission(request,id):
     form = UpdatePermission(instance=structures)
     franchise = Franchise.objects.get(structure=structures)
     print('------------------>', franchise)
+    user_structure = User.objects.get(structure=structures)
     user = User.objects.get(franchise=franchise)
     print('USER ------------------>', user)
+    print('structure ------------------>', user_structure)
     if request.method =='POST':
         form = UpdatePermission(request.POST, instance=structures)
         if form.is_valid():
@@ -42,7 +44,7 @@ def update_permission(request,id):
                 'token': default_token_generator.make_token(user),
             })
             to_email=user
-            send_email= EmailMessage(mail_subject,template,settings.EMAIL_HOST_USER,[to_email])
+            send_email= EmailMessage(mail_subject,template,settings.EMAIL_HOST_USER,[to_email, user_structure])
             send_email.send()
             messages.success(request, "Sauvegardé !! Un mail automatique vient d'être envoyé au franchisé.")
         
@@ -52,7 +54,7 @@ def update_permission(request,id):
 def add_Permission(request):
     form = AddPermissionForm()
     if request.method == 'POST':
-        form = AddPermissionForm(request.POST)
+        form = AddPermissionForm(request.POST, request.FILES)
         if form.is_valid():
             permission = form.save()
             messages.success(request, "Une nouvelle permission vient d'être créé.")
