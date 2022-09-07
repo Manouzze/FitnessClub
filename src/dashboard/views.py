@@ -10,7 +10,6 @@ from django.http import JsonResponse
 
 def dashboard(request):
     search_structure = Structure.objects.all()
-    
     manager_structures = Structure.objects.all()
     structures = Structure.objects.count()
     manager_franchises = Franchise.objects.all()
@@ -18,6 +17,7 @@ def dashboard(request):
     user = User.objects.filter(is_staff=False, is_admin=False)
     users = user.count()
     return render(request, 'dashboard.html', context={'search_structure':search_structure, 'structures':structures, 'franchises':franchises, 'users':users, 'manager_structures':manager_structures, 'manager_franchises':manager_franchises })
+
 
 
 

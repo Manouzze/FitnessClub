@@ -13,6 +13,7 @@ class AddStructureForm(ModelForm):
 
 
 
+
 class StructureRequestManagerForm(forms.Form):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)

@@ -38,6 +38,7 @@ h3{
   @include list-container;
 }
 
+
 /* //MEDIA QUERIES/ */
 /* //MEDIA QUERIES --------> 375px/ */
 
@@ -56,6 +57,7 @@ h3{
   .details_account{
     font-size: 9px;
     width: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,6 +101,7 @@ h3{
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     align-items: center;
     min-height: 100px;
     padding : 10px;

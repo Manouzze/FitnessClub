@@ -25,7 +25,6 @@ def list_structure(request):
     structures = Structure.objects.all()
     franchises = Franchise.objects.all()
 
-    
     return render(request, 'list_structure.html', context={'structures': structures, 'franchises': franchises,})
 
 
