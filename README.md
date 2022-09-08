@@ -17,5 +17,7 @@ Celui-ci est destiné au staff de la marque afin de gérer les différentes fran
 Les rôles :
 
 Staff -> Simon : email = simon.poiro@gmail.com | password = fitnessclub
+
 Gérant franchise -> Odette : email =  odette.wano@gmail.com  | password = fitnessclub
+
 Gérant structure -> Maurice: email = marice.charlo@gmail.com | password = fitnessclub
