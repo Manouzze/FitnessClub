@@ -24,17 +24,17 @@ def update_permission(request,id):
     structures = Structure.objects.get(id=id)
     form = UpdatePermission(instance=structures)
     franchise = Franchise.objects.get(structure=structures)
-    print('------------------>', franchise)
+    # print('------------------>', franchise)
     user_structure = User.objects.get(structure=structures)
     user = User.objects.get(franchise=franchise)
-    print('USER ------------------>', user)
-    print('structure ------------------>', user_structure)
+    # print('USER ------------------>', user)
+    # print('structure ------------------>', user_structure)
     if request.method =='POST':
         form = UpdatePermission(request.POST, instance=structures)
         if form.is_valid():
             form.save()
 
-             # User Activation
+             # Send email
             current_site = get_current_site(request)
             mail_subject = 'Confirmation des changements de permissions'
             template = render_to_string('email_confirmation_update_permissions.html', {
@@ -49,6 +49,9 @@ def update_permission(request,id):
             messages.success(request, "Sauvegardé !! Un mail automatique vient d'être envoyé au franchisé.")
         
     return render(request, 'update_permissions.html', context={'form': form, 'structures':structures,})
+
+
+
 
 
 def add_Permission(request):

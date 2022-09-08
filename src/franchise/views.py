@@ -4,6 +4,7 @@ from structure.models import Structure
 from franchise.forms import AddFranchiseForm, EditFranchiseForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import auth, messages
+from django.db.models import Q 
 
 # Create your views here.
 def list_franchise(request):
@@ -18,10 +19,22 @@ def franchise(request, franchise_slug):
     return render(request, 'franchise.html', context={'franchises': franchises, 'structures': structures,})
 
 
+# def search(request):
+#     search = request.GET.get('search')
+#     results_structure = Structure.objects.filter(Q(name__icontains=search) |
+#                                         Q(address__icontains=search))
+#     results_franchise = Franchise.objects.filter(name__icontains=search)
+#     return render(request, 'search.html', context={'results_structure': results_structure, 'results_franchise':results_franchise})
+
+# --------------* SEARCH BAR *--------------#
 def search(request):
-    search = request.GET.get('search')
+    search = request.POST.get('search')
+    results_structure = Structure.objects.filter(Q(name__icontains=search) |
+                                        Q(address__icontains=search))
     results_franchise = Franchise.objects.filter(name__icontains=search)
-    return render(request, 'search.html', context={'results_franchise':results_franchise})
+    return render(request, 'search.html', context={'results_structure': results_structure, 'results_franchise':results_franchise})
+
+
 
 
 #--------------* ADD FRANCHISE *--------------#

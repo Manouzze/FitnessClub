@@ -22,15 +22,21 @@
     <link href=  
 "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
         rel="stylesheet" type="text/css" /> 
+
+
+
 <!--------------  Search  ----------------->
 
 <form method="POST" id="search" action="{% url 'search' %}" autocomplete="off">
   {% csrf_token %}
-  <input type="text" placeholder="Recherche partenaires ou salles" class="search" id="tags" name="search">
+  <div class="search-bar">
+    <input type="text" placeholder="Recherche partenaires ou salles" class="search" id="tags" name="search">
+    <button type="submit"><img src="{% static 'icons/menu/search.png' %}"></img></button>
+  </div>
 </form>
+
+
 <div id='results-box' class="results-card not-visible"></div>
-
-
     
     <!--------------  Javascript  ----------------->
     
@@ -74,7 +80,7 @@
       <!-----------  Formulaires  -------------->
       
 
-      <div class="block-forms-description">git reset
+      <div class="block-forms-description">
         
         
         <p class="table-name">Formulaires</p>
@@ -159,8 +165,6 @@
       </div>
 
     </div>
-    
-    
-
+  
 
 {% endblock %}

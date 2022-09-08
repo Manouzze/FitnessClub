@@ -3,6 +3,7 @@
 @import '../../../fitnessClub/static/scss/mixin.scss';
 
 
+
 //--------------------- Mixins ---------------------//
 .container-structures{
   @include list-container;
@@ -112,70 +113,70 @@ button{
 
 
 //--------------------- Search Bar ---------------------//
-.search:focus{
-  background-color: white;
-}
-.not-visible{
-  display: none;
+.search-bar{
+  display: flex;
+  align-items: center;
+  margin: 50px 0px ;
+  .search{
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2.5px;
+    font-style: italic;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid white;
+    background-color: #171717;
+    color: rgba(255, 255, 255, 0.526);
+    border: solid 1px ;
+  }
+  button{
+    cursor: pointer;
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    margin-left:-40px ;
+    img{
+      width: 25px;
+    }
+  }
 }
 
-
-.results-card{
-  width: 37%;
-  box-shadow: 0 0px 1px 1px rgba(104, 218, 188, 0.881);
-  transition: 0.5s;
-  border-radius: 7px;
-  padding: 15px 15px;  
-  
-}
-
-// .search-bar{
-//   display: flex;
-//   align-items: center;
-//   margin-top: 50px;
-//   .search-input{
-//     text-align: center;
-//     font-family: 'Inter', sans-serif;
-//     letter-spacing: 2.5px;
-//     font-style: italic;
-//     width: 400px;
-//     height: 40px;
-//     border-radius: 10px;
-//     border: solid white;
-//     background-color: #171717;
-//     color: rgba(255, 255, 255, 0.526);
-//     border: solid 1px ;
-//   }
-//   button{
-//     cursor: pointer;
-//     width:30px;
-//     height:30px;
-//     border-radius: 50%;
-//     margin-left:-40px ;
-//     img{
-//       width: 25px;
-//     }
-//   }
-// }
 
 
 
 // //--------------------- MEDIA QUERIES ---------------------//
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1530px){
 
-
+  .block-forms{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
 
 }
 
-
-@media screen and (max-width: 375px){
-  //--------------------- Container Global ---------------------//
+@media screen and (max-width: 920px){
   
-  .search-bar{
+  #salle, #franchise, #manager{
+    min-width: 190px !important;
+  }
+}
+@media screen and (max-width: 850px){
+
+  .table-name, .container-users{
     display: none;
   }
-  //--------------------- Container Counter ---------------------//
+  .table-name:first-child{
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 375px){
+
   .container-general{
     margin-top: 80px;
     .block-container-structures{
@@ -212,8 +213,6 @@ button{
      margin-top: 20px;
      width: auto;
       .block-forms{
-        flex-wrap: none;
-        flex-direction: column;
         #add_franchise, #add_structure, #add_user, #add_permission{
           min-width: 200px;
           min-height: 80px;

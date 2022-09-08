@@ -5,6 +5,8 @@ from structure.models import Structure, slugify
 from franchise.models import Franchise
 from permission.models import Permission
 from account.models import User
+from django.db.models import Q 
+
 
 from structure.forms import AddStructureForm, StructureRequestManagerForm, EditStructureForm
 from django.contrib import auth, messages
@@ -69,6 +71,15 @@ def edit_structure(request,id):
 def StructureRequestManager(request):
     form = StructureRequestManagerForm()
     return render(request, 'structure_request_manager.html')
+
+
+# --------------* SEARCH BAR *--------------#
+def search(request):
+    search = request.POST.get('search')
+    results_structure = Structure.objects.filter(Q(name__icontains=search) |
+                                        Q(address__icontains=search))
+    results_franchise = Franchise.objects.filter(name__icontains=search)
+    return render(request, 'search.html', context={'results_structure': results_structure, 'results_franchise':results_franchise})
 
 
 

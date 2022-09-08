@@ -6,12 +6,10 @@
   border-radius: 17px;
   min-height: 140px;
   margin-bottom: 30px;
-
   border-radius: 3px;
 }
 .container-structures p {
   text-align: center;
-
 }
 
 .container-structures:hover {
@@ -36,7 +34,6 @@ button a {
   margin-top: 60px;
 }
 .container-general .block-container-structures {
-
   display: flex;
   justify-content: space-evenly;
 }
@@ -56,17 +53,8 @@ button a {
   font-size: 20px;
 }
 .container-general .block-forms-description {
-
   display: flex;
-  justify-content: space-evenly;
-}
-.container-general .block-container-structures #salle, .container-general .block-container-structures #franchise, .container-general .block-container-structures #manager {
-  margin-right: 20px;
-  box-shadow: 0px 0px 6px 4px rgba(54, 255, 209, 0.21);
-  min-width: 300px;
-  min-height: 115px;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
 }
@@ -117,27 +105,56 @@ button a {
   width: 100%;
 }
 
-.search:focus {
-  background-color: white;
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin: 50px 0px;
+}
+.search-bar .search {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 2.5px;
+  font-style: italic;
+  width: 400px;
+  height: 40px;
+  border-radius: 10px;
+  border: solid white;
+  background-color: #171717;
+  color: rgba(255, 255, 255, 0.526);
+  border: solid 1px;
+}
+.search-bar button {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: -40px;
+}
+.search-bar button img {
+  width: 25px;
 }
 
-.not-visible {
-  display: none;
+@media screen and (max-width: 1530px) {
+  .block-forms {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
-
-.results-card {
-  width: 37%;
-  box-shadow: 0 0px 1px 1px rgba(104, 218, 188, 0.881);
-  transition: 0.5s;
-  border-radius: 7px;
-  padding: 15px 15px;
+@media screen and (max-width: 920px) {
+  #salle, #franchise, #manager {
+    min-width: 190px !important;
+  }
 }
-
-
-@media screen and (max-width: 375px) {
-  .search-bar {
+@media screen and (max-width: 850px) {
+  .table-name, .container-users {
     display: none;
   }
+  .table-name:first-child {
+    display: block;
+  }
+}
+@media screen and (max-width: 375px) {
   .container-general {
     margin-top: 80px;
   }
@@ -169,10 +186,6 @@ button a {
   .container-general .block-forms-description .container-block-forms {
     margin-top: 20px;
     width: auto;
-  }
-  .container-general .block-forms-description .container-block-forms .block-forms {
-    flex-wrap: none;
-    flex-direction: column;
   }
   .container-general .block-forms-description .container-block-forms .block-forms #add_franchise, .container-general .block-forms-description .container-block-forms .block-forms #add_structure, .container-general .block-forms-description .container-block-forms .block-forms #add_user, .container-general .block-forms-description .container-block-forms .block-forms #add_permission {
     min-width: 200px;
