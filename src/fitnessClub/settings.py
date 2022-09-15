@@ -88,11 +88,10 @@ WSGI_APPLICATION = 'fitnessClub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fitnessclub',
-        'USER': 'userfitnessclub',
-        'PASSWORD': 'fitnessclub',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'HOST': config('HOST'),
+        'PORT': config('PORT'),
     }
 }
 
