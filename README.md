@@ -75,6 +75,8 @@ A chaque modification (création d'un utilisateur ou la modification des permiss
 
 ### Guide de déploiement sur PythonAnywhere
 
+⚠️ Attention : La fonctionnalité d'ajout ou de modification des permissions ne fonctionne pas sur pythonAnywhere à cause d'un problème connu de relation manytomany. En revanche cette fonctionnalité fonctionne très bien en local (Ou sur un autre système d'hébergement). 🤦‍♀️
+
 - Cloner le dépôt sur PythonAnywhere dans l'onglet Console
 
 > git clone  : https://github.com/Manouzze/FitnessClub.git
