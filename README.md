@@ -18,14 +18,25 @@ Lien du déploiement 👉 https://manouzee.pythonanywhere.com/
 - Déployement sur PythonAnywhere
 
 
-Les rôles :
+### Manuel d'utilisation
+1.Authentification :
+Les utilisateurs peuvent se connecter pour accéder à l'application. L'affichage de l'application dépent de leurs rôles. 
+  Les rôles :
 
-Staff -> Simon : email = simon.poiro@gmail.com | password = fitnessclub
+  Staff -> Simon : email = simon.poiro@gmail.com | password = fitnessclub
 
-Gérant franchise -> Odette : email =  odette.wano@gmail.com  | password = fitnessclub
+  Gérant franchise -> Odette : email =  odette.wano@gmail.com  | password = fitnessclub
 
-Gérant structure -> Maurice: email = marice.charlo@gmail.com | password = fitnessclub
+  Gérant structure -> Maurice: email = marice.charlo@gmail.com | password = fitnessclub
 
+2.Ajouts de : Franchises, Structures, Utilisateurs, Permissions
+Le staff à accès aux formulaires de création, modification et suppression.
+
+3.Recherche sur les partenaires ou salles.
+L'utilisateur staff à la possibilité de rechercher un partenaire ou une salle à travers une barre de recherche.
+
+4.Envoi de mail
+A chaque modification (création d'un utilisateur ou la modification des permissions d'une salle) un mail automatique sera envoyé.
 
 ## Installation en local
 
