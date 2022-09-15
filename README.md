@@ -56,16 +56,18 @@ A chaque modification (création d'un utilisateur ou la modification des permiss
 - Ajouter les paramètres de la base de donnés dans le fichier setting.py 
 (Django par défaut utilise SQLite, il est donc possible de sauter cette étape si on souhaite SQLite)
 
+```
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': '..',
-            'USER': '..',
+            'NAME': '..', 
+            'USER': '..',      
             'PASSWORD': '..',
             'HOST': 'localhost',
             'PORT': '5432'
         }
     }
+```
 
 - Exécutez les migrations avec le fichier manage.py 
 
@@ -75,7 +77,7 @@ A chaque modification (création d'un utilisateur ou la modification des permiss
 
 ### Guide de déploiement sur PythonAnywhere
 
-⚠️ Attention : La fonctionnalité d'ajout ou de modification des permissions ne fonctionne pas sur pythonAnywhere à cause d'un problème connu de relation manytomany. En revanche cette fonctionnalité fonctionne très bien en local (Ou sur un autre système d'hébergement). 🤦‍♀️
+⚠️ **Attention : La fonctionnalité d'ajout ou de modification des permissions ne fonctionne pas sur pythonAnywhere à cause d'un problème connu de relation manytomany. En revanche cette fonctionnalité fonctionne très bien en local (Ou sur un autre système d'hébergement).** 🤦‍♀️
 
 - Cloner le dépôt sur PythonAnywhere dans l'onglet Console
 
@@ -115,16 +117,19 @@ A chaque modification (création d'un utilisateur ou la modification des permiss
 
 - Créer une base de données MySQL dans l'onglet Database
   1. Configuer dans le fichier setting.py les variables
-  DATABASES = {
+  
+```
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': '..',
-            'USER': '..',
+            'NAME': '..', 
+            'USER': '..',      
             'PASSWORD': '..',
             'HOST': 'localhost',
             'PORT': '5432'
         }
     }
+```
 
   2.Effectuer les migrations depuis l'emplacement du fichier manage.py
   > python manage.py makemigrations
