@@ -60,13 +60,11 @@ button a {
 }
 .container-general .block-forms-description .container-block-forms {
   margin-top: 50px;
-  width: 1050px;
 }
 .container-general .block-forms-description .container-block-forms .block-forms {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 .container-general .block-forms-description .container-block-forms .block-forms #add_franchise, .container-general .block-forms-description .container-block-forms .block-forms #add_structure, .container-general .block-forms-description .container-block-forms .block-forms #add_user, .container-general .block-forms-description .container-block-forms .block-forms #add_permission {
   flex-direction: column;
@@ -145,8 +143,18 @@ button a {
   #salle, #franchise, #manager {
     min-width: 190px !important;
   }
+  .container_content, .container_global {
+    width: none !important;
+    padding: 0 0px;
+  }
+  #salle, #franchise, #manager {
+    display: none;
+  }
+  .table-name, .container-users {
+    display: none;
+  }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 600px) {
   .table-name, .container-users {
     display: none;
   }
@@ -154,28 +162,17 @@ button a {
     display: block;
   }
 }
+@media screen and (max-width: 500px) {
+  .table-name:first-child {
+    display: block;
+  }
+  #salle, #franchise, #manager {
+    min-width: 120px !important;
+  }
+}
 @media screen and (max-width: 375px) {
   .container-general {
     margin-top: 80px;
-  }
-  .container-general .block-container-structures #salle, .container-general .block-container-structures #franchise, .container-general .block-container-structures #manager {
-    min-width: 83px;
-    min-height: 55px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    letter-spacing: 2px;
-    padding: 2px;
-  }
-  .container-general .block-container-structures #salle p:first-child, .container-general .block-container-structures #franchise p:first-child, .container-general .block-container-structures #manager p:first-child {
-    font-size: 12px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-  .container-general .block-container-structures #salle p:last-child, .container-general .block-container-structures #franchise p:last-child, .container-general .block-container-structures #manager p:last-child {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    font-size: 10px;
   }
   .container-general .block-forms-description .description {
     font-size: 9px;
@@ -185,7 +182,6 @@ button a {
   }
   .container-general .block-forms-description .container-block-forms {
     margin-top: 20px;
-    width: auto;
   }
   .container-general .block-forms-description .container-block-forms .block-forms #add_franchise, .container-general .block-forms-description .container-block-forms .block-forms #add_structure, .container-general .block-forms-description .container-block-forms .block-forms #add_user, .container-general .block-forms-description .container-block-forms .block-forms #add_permission {
     min-width: 200px;
@@ -211,10 +207,6 @@ button a {
   button a {
     color: white;
     text-decoration: none;
-  }
-  .container_content {
-    margin-bottom: 50px;
-    background-position: right top;
   }
 }
 

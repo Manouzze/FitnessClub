@@ -183,9 +183,6 @@ h3 {
     margin: 60px 0px;
     letter-spacing: 2px;
   }
-  .container-checkbox, .container-checkbox-checked {
-    display: none;
-  }
   .container-franchise {
     min-height: 100px;
     padding: 10px;

@@ -59,14 +59,14 @@ button{
    
     .container-block-forms{
       margin-top: 50px;
-      width: 1050px;
+
       
       .block-forms{
         display: flex;
         // flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        width: 100%;
+     
         #add_franchise, #add_structure, #add_user, #add_permission{
           flex-direction: column;
           min-width: 300px;
@@ -163,45 +163,49 @@ button{
   #salle, #franchise, #manager{
     min-width: 190px !important;
   }
-}
-@media screen and (max-width: 850px){
+  .container_content, .container_global {
 
+    width: none !important;
+    padding: 0 0px;
+  }
+  #salle, #franchise, #manager{
+    display: none;
+ }
+ .table-name, .container-users{
+   display: none;
+ }
+}
+
+
+
+@media screen and (max-width: 600px){
+  
   .table-name, .container-users{
     display: none;
   }
   .table-name:first-child{
     display: block;
   }
-
 }
+
+@media screen and (max-width: 500px){
+  
+  .table-name:first-child{
+    display: block;
+  }
+  #salle, #franchise, #manager{
+    min-width: 120px !important;;
+  }
+}
+
+
+
 
 @media screen and (max-width: 375px){
 
   .container-general{
     margin-top: 80px;
-    .block-container-structures{
-      
-    #salle, #franchise, #manager{
-      min-width: 83px;
-      min-height: 55px;
-      margin-right: 10px;
-      margin-bottom: 20px;
-      border-radius: 6px;
-      letter-spacing: 2px;
-      padding: 2px;
-      p:first-child{
-        font-size: 12px;
-        margin-bottom: 0px;
-        margin-top: 0px;
-        
-      }
-      p:last-child{
-        margin-top: 3px;
-        margin-bottom: 0px;
-        font-size: 10px;
-      }
-    }
-  }
+    
   .block-forms-description{
     .description{
       font-size: 9px;
@@ -211,7 +215,6 @@ button{
     }
     .container-block-forms{
      margin-top: 20px;
-     width: auto;
       .block-forms{
         #add_franchise, #add_structure, #add_user, #add_permission{
           min-width: 200px;
@@ -238,8 +241,5 @@ button{
 button{
   @include button-375;
 }
-.container_content{
-  margin-bottom: 50px;
-  background-position: right top;
-}
+
 }

@@ -11,14 +11,18 @@ from django.db.models import Q
 from structure.forms import AddStructureForm, StructureRequestManagerForm, EditStructureForm
 from django.contrib import auth, messages
 
-
-
+def test(structure_slug):
+    structure = Structure.objects.get(slug=structure_slug)
+    permissions = structure.permission
+    print(permissions)
 
 #--------------* STRUCTURE DETAIL *--------------#
 def structure(request, structure_slug):
     structure = Structure.objects.filter(slug=structure_slug)
     permission = Permission.objects.all()
     structures = get_object_or_404(Structure, slug=structure_slug)
+    test(structure_slug)
+
     return render(request, 'structure.html', context={'structures': structures, 'structure':structure, 'permission': permission})
 
 

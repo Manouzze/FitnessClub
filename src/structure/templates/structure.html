@@ -65,18 +65,18 @@
 <div class="containers_permission">
   
   {% for structure in structure %}
-  {% for perm in structure.permission.all %}
-  <div class="single_permission">
-    <img src='{{ perm.icon.url }}' alt="{{ perm }}">
-    <p>{{ perm }}</p>
-    
-    <div class="True">
-      <input type="checkbox" id="{{ perm }}" class="checked">
-      <label for="{{ perm }}" class="label"></label>
-    </div>
-    
-  </div>
-  {% endfor %}
+    {% for perm in structure.permission.all %}
+      <div class="single_permission">
+        <img src='{{ perm.icon.url }}' alt="{{ perm }}">
+        <p>{{ perm }}</p>
+        
+        <div class="True">
+          <input type="checkbox" id="{{ perm }}" class="checked">
+          <label for="{{ perm }}" class="label"></label>
+        </div>
+        
+      </div>
+    {% endfor %}
   {% endfor %}
 </div>
 

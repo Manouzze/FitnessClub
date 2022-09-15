@@ -59,7 +59,7 @@ body {
   background-color: #292929;
   box-shadow: 0px 0px 34px rgba(0, 0, 0, 0.3);
   color: #ffffff;
-  width: 430px;
+  min-width: 20%;
   height: 445px;
   border-radius: 14px;
   display: flex;
@@ -115,7 +115,6 @@ footer {
   align-items: center;
 }
 footer .single-info {
-  margin: 0px 280px;
   margin-top: 60px;
 }
 footer .single-info p {
@@ -134,6 +133,22 @@ footer .icons_social {
 }
 footer .icons_social a {
   margin: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .contener_global .contenu {
+    background-size: 200%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contener_global .connexion .block-connexion {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .contener_global .contenu {
+    background-size: 260%;
+  }
 }
 
 /*# sourceMappingURL=login.css.map */

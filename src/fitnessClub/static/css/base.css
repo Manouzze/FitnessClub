@@ -110,9 +110,6 @@ body {
   body {
     font-size: 10px;
   }
-  body .container_global {
-    min-height: 600px;
-  }
   body .container_global .sidebar {
     width: 10%;
     padding: 5px;

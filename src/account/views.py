@@ -10,7 +10,7 @@ from franchise.models import Franchise
 from franchise.views import franchise
 from structure.models import Structure
 from . import forms
-
+from django.contrib.auth.decorators import login_required
 
 
 #--------------* Verification mail *--------------#
@@ -80,7 +80,7 @@ def loginUser(request):
         request, 'login.html', context={'form': form, 'message': message})
 
 #--------------* LOGOUT *--------------#
-
+@login_required(login_url='login')
 def logoutUser(request):
     auth.logout(request)
     messages.success(request, 'Vous êtes déconnecté')
