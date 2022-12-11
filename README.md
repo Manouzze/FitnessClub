@@ -25,7 +25,7 @@ Les utilisateurs peuvent se connecter pour accéder à l'application. L'affichag
 
   Staff -> Simon : email = simon.poiro@gmail.com | password = fitnessclub
 
-  Gérant franchise -> Odette : email =  odette.wano@gmail.com  | password = fitnessclub
+  Gérant franchise -> Jeff : email =  jeff.wano@gmail.com  | password = fitnessclub
 
   Gérant structure -> Maurice: email = marice.charlo@gmail.com | password = fitnessclub
 
