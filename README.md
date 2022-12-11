@@ -23,11 +23,11 @@ Lien du déploiement 👉 https://manouzee.pythonanywhere.com/
 Les utilisateurs peuvent se connecter pour accéder à l'application. L'affichage de l'application dépent de leurs rôles. 
   Les rôles :
 
-  Staff -> Simon : email = simon.poiro@gmail.com | password = fitnessclub
+  Staff -> Sarah : email = sarah.voila@gmail.com | password = fitnessclub
 
   Gérant franchise -> Jeff : email =  jeff.wano@gmail.com  | password = fitnessclub
 
-  Gérant structure -> Maurice: email = marice.charlo@gmail.com | password = fitnessclub
+  Gérant structure -> Nicolas: email = nicolas.blabla@gmail.com | password = fitnessclub
 
 2.Ajouts de : Franchises, Structures, Utilisateurs, Permissions
 Le staff à accès aux formulaires de création, modification et suppression.
